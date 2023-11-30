@@ -44,9 +44,34 @@ establish a strong online presence.`,
   ]
 
   return (
-    <section>
+    <section className="bg-black">
       <h2>WHAT CAN WE DO FOR YOU</h2>
       <p>We develop softwares that helps millions of professionals</p>
+      <DevelopmentCard development={developments[0]} />
     </section>
+  )
+}
+
+function DevelopmentCard({ development }) {
+  const { image, title, content } = development
+  return (
+    <div
+      className={`
+        bg-gradient-to-br from-[#cfcfcf] to-[#cfcfcf]  via-[#232323] 
+        p-[2px] w-min rounded-[10px]
+        `}
+    >
+      <div
+        className={`
+            w-[470px] h-[470px] p-[35px] rounded-[9px] 
+            flex flex-col justify-center gap-[30px]
+            bg-gradient-to-br from-[#404040] to-black
+    `}
+      >
+        <img src={image} className="w-[100px] h-[100px]" />
+        <h3 className="text-[40px] text-white">{title}</h3>
+        <p className="font-[600] text-[22px] text-[#948989]">{content}</p>
+      </div>
+    </div>
   )
 }
