@@ -118,7 +118,7 @@ function Bridge({ isFull, isLeft, gridArea }) {
 
   const bottomLeft = (
     <svg
-      className="absolute left-[50%] bottom-[50%] "
+      className="absolute left-[25%] bottom-[50%] "
       width="602"
       height="602"
       viewBox="0 0 602 602"
@@ -134,7 +134,7 @@ function Bridge({ isFull, isLeft, gridArea }) {
       <defs>
         <linearGradient
           id="paint0_linear_12_140"
-          x1="302"
+          x1="3"
           y1="0"
           x2="302"
           y2="600"
@@ -150,7 +150,7 @@ function Bridge({ isFull, isLeft, gridArea }) {
 
   const bottomRight = (
     <svg
-      className="absolute right-[50%] bottom-[50%]"
+      className="absolute right-[25%] bottom-[50%]"
       width="602"
       height="602"
       viewBox="0 0 602 602"
@@ -166,10 +166,10 @@ function Bridge({ isFull, isLeft, gridArea }) {
       <defs>
         <linearGradient
           id="paint0_linear_12_142"
-          x1="300"
-          y1="0"
-          x2="300"
-          y2="600"
+          x1="500"
+          y1="-110"
+          x2="100"
+          y2="500"
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#092031" />
