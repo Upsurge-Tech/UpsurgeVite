@@ -4,8 +4,10 @@ import ecommerceImg from '../assets/for-you/ecommerce.svg'
 import webImg from '../assets/for-you/web.svg'
 import mobileImg from '../assets/for-you/mobile.svg'
 import style from './for-you.module.css'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function WhatCanWeDoForYou() {
   const developments = [
@@ -62,17 +64,17 @@ establish a strong online presence.`,
       <div className={`${style['grid']} max-w-[1240px] m-auto`}>
         <DevelopmentCard development={developments[0]} gridArea={'A'} />
 
-        <Bridge isFull={isFull} isLeft={true} gridArea={'a'} />
+        <Bridge isLeft={true} gridArea={'a'} />
         <DevelopmentCard development={developments[1]} gridArea={'B'} />
 
         <DevelopmentCard development={developments[2]} gridArea={'C'} />
-        <Bridge isFull={isFull} isLeft={false} gridArea={'b'} />
+        <Bridge isLeft={false} gridArea={'b'} />
 
-        <Bridge isFull={isFull} isLeft={true} gridArea={'c'} />
+        <Bridge isLeft={true} gridArea={'c'} />
         <DevelopmentCard development={developments[3]} gridArea={'D'} />
 
         <DevelopmentCard development={developments[4]} gridArea={'E'} />
-        <Bridge isFull={isFull} isLeft={false} gridArea={'d'} />
+        <Bridge isLeft={false} gridArea={'d'} />
       </div>
     </section>
   )
@@ -80,9 +82,22 @@ establish a strong online presence.`,
 
 function DevelopmentCard({ development, gridArea }) {
   const { image, title, content } = development
+  const controls = useAnimation()
+  const [ref, inView] = useInView({ threshold: 0.5 })
+  const variants = {
+    init: { opacity: 0, scale: 0 },
+    final: { opacity: 1, scale: 1 },
+  }
+  useEffect(() => {
+    if (inView) controls.start('final')
+  }, [controls, inView])
 
   return (
-    <div
+    <motion.div
+      ref={ref}
+      variants={variants}
+      initial="init"
+      animate={controls}
       className={`
         bg-gradient-to-br from-[#9f9f9f] to-[#7e7e7e]  via-[#232323] 
         p-[2px] rounded-[10px] flex flex-col
@@ -100,14 +115,22 @@ function DevelopmentCard({ development, gridArea }) {
         <h3 className="text-[40px] text-white">{title}</h3>
         <p className="font-[600] text-[22px] text-[#948989]">{content}</p>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
-function Bridge({ isFull, isLeft, gridArea }) {
-  const strokeDasharray = '9000px'
-  const transition = 'stroke-dashoffset 1s'
+function Bridge({ isLeft, gridArea }) {
+  const [isFull, setIsFull] = useState(false)
+  const [ref, inView] = useInView({ threshold: 0.5 })
 
+  useEffect(() => {
+    if (!inView) return
+    setIsFull(true)
+    console.log('in view')
+  }, [inView])
+
+  const strokeDasharray = '9000px'
+  const transition = 'stroke-dashoffset 10s'
   const noLength = {
     strokeDasharray,
     transition,
@@ -186,6 +209,7 @@ function Bridge({ isFull, isLeft, gridArea }) {
 
   return (
     <div
+      ref={ref}
       className={`relative min-h-[300px] overflow-hidden hidden sm:block`}
       style={{ gridArea }}
     >
