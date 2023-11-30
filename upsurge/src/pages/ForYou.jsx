@@ -1,35 +1,41 @@
+import softwareImg from '../assets/for-you/software.svg'
+import graphicsImg from '../assets/for-you/graphics.svg'
+import ecommerceImg from '../assets/for-you/ecommerce.svg'
+import webImg from '../assets/for-you/web.svg'
+import mobileImg from '../assets/for-you/mobile.svg'
+
 export default function WhatCanWeDoForYou() {
   const developments = [
     {
-      image: '',
+      image: webImg,
       title: 'Web Development',
       content: `We specialize in providing top-notch web
 development services to help businesses 
 establish a strong online presence.`,
     },
     {
-      image: '',
+      image: mobileImg,
       title: 'Mobile Development',
       content: `We specialize in providing top-notch web
 development services to help businesses 
 establish a strong online presence.`,
     },
     {
-      image: '',
+      image: softwareImg,
       title: 'Software Development',
       content: `We specialize in providing top-notch web
 development services to help businesses 
 establish a strong online presence.`,
     },
     {
-      image: '',
+      image: ecommerceImg,
       title: 'E-Commerce Dev’t',
       content: `We specialize in providing top-notch web
 development services to help businesses 
 establish a strong online presence.`,
     },
     {
-      image: '',
+      image: graphicsImg,
       title: 'Graphics Design',
       content: `We specialize in providing top-notch web
 development services to help businesses 
