@@ -3,7 +3,7 @@ import graphicsImg from '../assets/for-you/graphics.svg'
 import ecommerceImg from '../assets/for-you/ecommerce.svg'
 import webImg from '../assets/for-you/web.svg'
 import mobileImg from '../assets/for-you/mobile.svg'
-import './for-you.css'
+import style from './for-you.module.css'
 
 import { useState } from 'react'
 
@@ -46,35 +46,49 @@ establish a strong online presence.`,
     },
   ]
 
-  const [isFull, setIsFull] = useState(false)
+  const [isFull, setIsFull] = useState(true)
   return (
     <section className="bg-black">
       <h2>WHAT CAN WE DO FOR YOU</h2>
       <p>We develop softwares that helps millions of professionals</p>
-      <DevelopmentCard development={developments[0]} />
       <button className="bg-white" onClick={() => setIsFull(!isFull)}>
         HERE
       </button>
-      <Bridge1 isFull={isFull} />
-      <Bridge2 isFull={isFull} />
-      <Bridge3 isFull={isFull} />
-      <Bridge4 isFull={isFull} />
+
+      <div className={`${style['grid']} max-w-[1240px] m-auto`}>
+        <DevelopmentCard development={developments[0]} gridArea={'A'} />
+
+        <Bridge isFull={isFull} isLeft={true} gridArea={'a'} />
+        <DevelopmentCard development={developments[1]} gridArea={'B'} />
+
+        <DevelopmentCard development={developments[2]} gridArea={'C'} />
+        <Bridge isFull={isFull} isLeft={false} gridArea={'b'} />
+
+        <Bridge isFull={isFull} isLeft={true} gridArea={'c'} />
+        <DevelopmentCard development={developments[3]} gridArea={'D'} />
+
+        <DevelopmentCard development={developments[4]} gridArea={'E'} />
+        <Bridge isFull={isFull} isLeft={false} gridArea={'d'} />
+      </div>
     </section>
   )
 }
 
-function DevelopmentCard({ development }) {
+function DevelopmentCard({ development, gridArea }) {
   const { image, title, content } = development
+
+
   return (
     <div
       className={`
-        bg-gradient-to-br from-[#cfcfcf] to-[#cfcfcf]  via-[#232323] 
-        p-[2px] w-min rounded-[10px]
+        bg-gradient-to-br from-[#9f9f9f] to-[#7e7e7e]  via-[#232323] 
+        p-[2px] rounded-[10px] flex flex-col
         `}
+      style={{ gridArea }}
     >
       <div
         className={`
-            w-[470px] h-[470px] p-[35px] rounded-[9px] 
+            flex-1  px-[35px] rounded-[9px] 
             flex flex-col justify-center gap-[30px]
             bg-gradient-to-br from-[#404040] to-black
     `}
@@ -87,108 +101,44 @@ function DevelopmentCard({ development }) {
   )
 }
 
-const strokeDasharray = '1000px'
-const noLength = {
-  strokeDasharray,
-  transition: 'stroke-dashoffset 1s',
-  strokeDashoffset: '1000px',
-}
+function Bridge({ isFull, isLeft, gridArea }) {
+  const strokeDasharray = '9000px'
+  const transition = 'stroke-dashoffset 1s'
 
-const fullLength = {
-  strokeDasharray,
-  transition: 'stroke-dashoffset 1s',
-  strokeDashoffset: '0px',
-}
+  const noLength = {
+    strokeDasharray,
+    transition,
+    strokeDashoffset: strokeDasharray,
+  }
 
-function Bridge1({ isFull }) {
-  return (
+  const fullLength = {
+    strokeDasharray,
+    transition,
+    strokeDashoffset: '0px',
+  }
+
+  const bottomLeft = (
     <svg
-    //   className="w-125px h-[50px]"
-      width="501"
-      height="155"
-      viewBox="0 0 501 155"
+      className="absolute left-[50%] bottom-[50%] "
+      width="602"
+      height="602"
+      viewBox="0 0 602 602"
       fill="none"
-    //   preserveAspectRatio="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M0 2H479C490.046 2 499 10.9543 499 22V155"
-        stroke="url(#paint0_linear_10_2076)"
+        d="M1.99998 0V580C1.99998 591.046 10.9543 600 20 600H602"
+        stroke="url(#paint0_linear_12_140)"
         strokeWidth="3"
         style={isFull ? fullLength : noLength}
       />
       <defs>
         <linearGradient
-          id="paint0_linear_10_2076"
-          x1="249.5"
-          y1="2"
-          x2="249.5"
-          y2="155"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#052E4B" />
-          <stop offset="0.494792" stopColor="#69DBFF" />
-          <stop offset="1" stopColor="#01FF39" />
-        </linearGradient>
-      </defs>
-    </svg>
-  )
-}
-
-function Bridge2({ isFull }) {
-  return (
-    <svg
-      width="479"
-      height="160"
-      viewBox="0 0 479 160"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M477 0V138C477 149.046 468.046 158 457 158H0"
-        stroke="url(#paint0_linear_10_2075)"
-        strokeWidth="3"
-        style={isFull ? fullLength : noLength}
-      />
-      <defs>
-        <linearGradient
-          id="paint0_linear_10_2075"
-          x1="416.951"
-          y1="158"
-          x2="238.5"
-          y2="158"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset="0.494792" stopColor="#69DBFF" />
-          <stop offset="1" stopColor="#01FF39" />
-        </linearGradient>
-      </defs>
-    </svg>
-  )
-}
-
-function Bridge3({ isFull }) {
-  return (
-    <svg
-      width="466"
-      height="170"
-      viewBox="0 0 466 170"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M2.00001 0V148C2.00001 159.046 10.9543 168 22 168H466"
-        stroke="url(#paint0_linear_66_109)"
-        strokeWidth="3"
-        style={isFull ? fullLength : noLength}
-      />
-      <defs>
-        <linearGradient
-          id="paint0_linear_66_109"
-          x1="234"
+          id="paint0_linear_12_140"
+          x1="302"
           y1="0"
-          x2="234"
-          y2="168"
+          x2="302"
+          y2="600"
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#092031" />
@@ -198,30 +148,29 @@ function Bridge3({ isFull }) {
       </defs>
     </svg>
   )
-}
 
-function Bridge4({ isFull }) {
-  return (
+  const bottomRight = (
     <svg
-      width="500"
-      height="173"
-      viewBox="0 0 500 173"
+    className='absolute right-[50%] bottom-[50%]'
+      width="602"
+      height="602"
+      viewBox="0 0 602 602"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M498 0V151C498 162.046 489.046 171 478 171H0"
-        stroke="url(#paint0_linear_10_2073)"
+        d="M600 0V580C600 591.046 591.046 600 580 600H0"
+        stroke="url(#paint0_linear_12_142)"
         strokeWidth="3"
         style={isFull ? fullLength : noLength}
       />
       <defs>
         <linearGradient
-          id="paint0_linear_10_2073"
-          x1="249"
+          id="paint0_linear_12_142"
+          x1="300"
           y1="0"
-          x2="249"
-          y2="171"
+          x2="300"
+          y2="600"
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#092031" />
@@ -230,5 +179,20 @@ function Bridge4({ isFull }) {
         </linearGradient>
       </defs>
     </svg>
+  )
+
+
+  return (
+    <div
+      className={`
+        relative min-h-[300px]
+        overflow-hidden
+         
+        md:block
+        `}
+      style={{ gridArea }}
+    >
+      {isLeft ? bottomLeft : bottomRight}
+    </div>
   )
 }

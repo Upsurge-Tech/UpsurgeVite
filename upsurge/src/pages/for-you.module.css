@@ -1,0 +1,21 @@
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-rows: repeat(10, 1fr 3fr);
+  grid-template-areas:
+    'A . .'
+    'A . .'
+    'A . B'
+    'a a B'
+    'C . B'
+    'C b b'
+    'C . D'
+    'c c D'
+    'E . D'
+    'E d d'
+    'E . .';
+
+
+
+}
+
