@@ -42,9 +42,9 @@ const Career = () => {
     });
   }, []);
   return (
-    <main className="bg-[#050D1F] w-screen h-screen">
-      <div className="text-white flex flex-row w-full h-full ">
-        <div ref={video_load} className="flex    ">
+    <main className="bg-[#050D1F] min-w-screen min-h-screen">
+      <div className="text-white flex flex-col md:flex-row w-full md:w-screen">
+        <div ref={video_load} className="flex w-full md:w-[50%]">
           <video className="w-full h-full object-cover" autoPlay loop muted>
             <source src={globe} type="video/mp4" />
             Your browser does not support the video tag.
@@ -52,13 +52,13 @@ const Career = () => {
         </div>
         <div
           ref={career_section}
-          className=" pt-40 flex flex-col gap-20  w-[735.98px]  "
+          className="pt-5 md:pt-40 p-10 md:p-0 flex flex-col gap-20 w-full md:w-[50%]"
         >
-          <div className="text-6xl">
+          <div className="text-4xl md:text-6xl">
             Looking for <span className="text-[#34B4DC]">internships?</span>
           </div>
           <div className="">
-            <div className="pl-14 pr-24 pb-14">
+            <div className="pl-4 md:pl-14 pr-4 md:pr-24 pb-4 md:pb-14">
               At Upsurge, we believe in a holistic approach to technology
               solutions. We seamlessly blend the end-to-end convenience of
               integrated services with the best of breed excellence of
@@ -67,7 +67,7 @@ const Career = () => {
             <a href="#contact">
               <button
                 type="button"
-                className="focus:ring-4 focus:outline-none  focus:ring-blue-300 font-medium rounded-lg text-sm px-20 py-3 text-center  ml-4 md:ml-28 bg-gradient-to-r from-[#0038FCB2] to-[#69DBFF68] text-white "
+                className="focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md md:text-md px-8 md:px-20 py-3 text-center ml-4 md:ml-14 bg-gradient-to-r from-[#0038FCB2] to-[#69DBFF68] text-white"
               >
                 click here
               </button>
