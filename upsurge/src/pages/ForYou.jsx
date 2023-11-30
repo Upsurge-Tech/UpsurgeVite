@@ -48,9 +48,13 @@ establish a strong online presence.`,
 
   const [isFull, setIsFull] = useState(true)
   return (
-    <section className="bg-black">
-      <h2>WHAT CAN WE DO FOR YOU</h2>
-      <p>We develop softwares that helps millions of professionals</p>
+    <section className="bg-black py-[162px] px-[1rem] ">
+      <div className="text-center pb-[100px] md:pb-[278px]">
+        <h2 className="text-[40px] text-white">WHAT CAN WE DO FOR YOU</h2>
+        <p className="text-[32px] text-[#948989]">
+          We develop softwares that helps millions of professionals
+        </p>
+      </div>
       <button className="bg-white" onClick={() => setIsFull(!isFull)}>
         HERE
       </button>
