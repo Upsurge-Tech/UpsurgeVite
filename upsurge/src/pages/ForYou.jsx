@@ -77,7 +77,6 @@ establish a strong online presence.`,
 function DevelopmentCard({ development, gridArea }) {
   const { image, title, content } = development
 
-
   return (
     <div
       className={`
@@ -88,7 +87,7 @@ function DevelopmentCard({ development, gridArea }) {
     >
       <div
         className={`
-            flex-1  px-[35px] rounded-[9px] 
+            flex-1  p-[35px] rounded-[9px] 
             flex flex-col justify-center gap-[30px]
             bg-gradient-to-br from-[#404040] to-black
     `}
@@ -151,7 +150,7 @@ function Bridge({ isFull, isLeft, gridArea }) {
 
   const bottomRight = (
     <svg
-    className='absolute right-[50%] bottom-[50%]'
+      className="absolute right-[50%] bottom-[50%]"
       width="602"
       height="602"
       viewBox="0 0 602 602"
@@ -181,15 +180,9 @@ function Bridge({ isFull, isLeft, gridArea }) {
     </svg>
   )
 
-
   return (
     <div
-      className={`
-        relative min-h-[300px]
-        overflow-hidden
-         
-        md:block
-        `}
+      className={`relative min-h-[300px] overflow-hidden hidden sm:block`}
       style={{ gridArea }}
     >
       {isLeft ? bottomLeft : bottomRight}

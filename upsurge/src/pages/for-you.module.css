@@ -14,8 +14,30 @@
     'E . D'
     'E d d'
     'E . .';
-
-
-
 }
 
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: repeat(10, 5fr 1fr);
+    grid-template-areas:
+      'A A .'
+      'a . .'
+      'a B B'
+      '. . b'
+      'C C b'
+      'c . .'
+      'c D D'
+      '. . d'
+      'E E d';
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /*Bridges should be hidden through tailwind*/
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
