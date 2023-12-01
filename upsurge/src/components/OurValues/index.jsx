@@ -38,13 +38,21 @@ export default function OurValues() {
     },
   ]
   return (
-    <section className="bg-[black] text-white px-[2rem]">
+    <section className="bg-[black] text-white px-[2rem] py-[80px]">
+      <div className="max-w-[1400px] m-auto ">
+        <div className="flex items-center gap-[63px] pb-[164px]">
+          <h2 className="text-[64px]">
+            Our <span className="text-[#5cc0e0]">Values</span>{' '}
+          </h2>
+          <div className="flex-1 bg-gradient-to-r from-[#6adbfe] to-white h-[3px]"></div>
+        </div>
 
-      <div className="max-w-[1070px] m-auto ">
-         
-        <h2>Our Values</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[150px] ">
+        <div
+          className={`
+            grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[150px]
+            max-w-[1070px] m-auto 
+        `}
+        >
           {values.map(({ color, title, content }) => (
             <ValueCard
               key={title}
