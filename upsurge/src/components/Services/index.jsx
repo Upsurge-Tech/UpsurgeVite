@@ -56,7 +56,7 @@ establish a strong online presence.`,
         </p>
       </div>
 
-      <div className={`${style['grid']} max-w-[1240px] m-auto`}>
+      <div className={`${style['grid']} max-w-[1000px] m-auto`}>
         <DevelopmentCard development={developments[0]} gridArea={'A'} />
 
         <Bridge isLeft={true} gridArea={'a'} />

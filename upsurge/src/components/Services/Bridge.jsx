@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 
 export default function Bridge({ isLeft, gridArea }) {
   const controls = useAnimation()
-  const [ref, inView] = useInView({ threshold: 0.5 })
+  const [ref, inView] = useInView({ rootMargin: '-20%'})
 
   useEffect(() => {
     if (inView) controls.start('fullLength')
