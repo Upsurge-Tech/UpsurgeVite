@@ -7,7 +7,7 @@ import style from './for-you.module.css'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 
 export default function WhatCanWeDoForYou() {
   const developments = [
@@ -48,7 +48,6 @@ establish a strong online presence.`,
     },
   ]
 
-  const [isFull, setIsFull] = useState(true)
   return (
     <section className="bg-black py-[162px] px-[1rem] ">
       <div className="text-center pb-[100px] md:pb-[278px]">
@@ -57,9 +56,6 @@ establish a strong online presence.`,
           We develop softwares that helps millions of professionals
         </p>
       </div>
-      <button className="bg-white" onClick={() => setIsFull(!isFull)}>
-        HERE
-      </button>
 
       <div className={`${style['grid']} max-w-[1240px] m-auto`}>
         <DevelopmentCard development={developments[0]} gridArea={'A'} />
@@ -85,18 +81,22 @@ function DevelopmentCard({ development, gridArea }) {
   const controls = useAnimation()
   const [ref, inView] = useInView({ threshold: 0.5 })
   const variants = {
-    init: { opacity: 0, scale: 0 },
-    final: { opacity: 1, scale: 1 },
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { type: 'tween' },
+    },
   }
   useEffect(() => {
-    if (inView) controls.start('final')
+    if (inView) controls.start('visible')
   }, [controls, inView])
 
   return (
     <motion.div
       ref={ref}
       variants={variants}
-      initial="init"
+      initial="hidden"
       animate={controls}
       className={`
         bg-gradient-to-br from-[#9f9f9f] to-[#7e7e7e]  via-[#232323] 
@@ -120,27 +120,19 @@ function DevelopmentCard({ development, gridArea }) {
 }
 
 function Bridge({ isLeft, gridArea }) {
-  const [isFull, setIsFull] = useState(false)
+  const controls = useAnimation()
   const [ref, inView] = useInView({ threshold: 0.5 })
 
   useEffect(() => {
-    if (!inView) return
-    setIsFull(true)
-    console.log('in view')
-  }, [inView])
+    if (inView) {
+      console.log('in view!!  ')
+      controls.start('fullLength')
+    }
+  }, [inView, controls])
 
-  const strokeDasharray = '9000px'
-  const transition = 'stroke-dashoffset 10s'
-  const noLength = {
-    strokeDasharray,
-    transition,
-    strokeDashoffset: strokeDasharray,
-  }
-
-  const fullLength = {
-    strokeDasharray,
-    transition,
-    strokeDashoffset: '0px',
+  const variants = {
+    noLength: { pathLength: 0 }, //roughly the size of svg
+    fullLength: { pathLength: 1, transition: { duration: 1 } },
   }
 
   const bottomLeft = (
@@ -152,11 +144,13 @@ function Bridge({ isLeft, gridArea }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path
+      <motion.path
+        variants={variants}
+        initial="noLength"
+        animate={controls}
         d="M1.99998 0V580C1.99998 591.046 10.9543 600 20 600H602"
         stroke="url(#paint0_linear_12_140)"
         strokeWidth="3"
-        style={isFull ? fullLength : noLength}
       />
       <defs>
         <linearGradient
@@ -184,11 +178,13 @@ function Bridge({ isLeft, gridArea }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path
+      <motion.path
+        variants={variants}
+        initial="noLength"
+        animate={controls}
         d="M600 0V580C600 591.046 591.046 600 580 600H0"
         stroke="url(#paint0_linear_12_142)"
         strokeWidth="3"
-        style={isFull ? fullLength : noLength}
       />
       <defs>
         <linearGradient
