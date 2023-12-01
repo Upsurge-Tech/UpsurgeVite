@@ -159,11 +159,11 @@ const Home = () => {
           ref={hero_txt}
           className="flex flex-col pt-28 items-center justify-center h-96 pl-6 pr-6 md:pl-48 md:pr-48 space-y-10 "
         >
-          <div className="text-[#C6C6C6] font-inter text-6xl md:text-8xl text-center ">
+          <div className="text-[#C6C6C6] font-inter text-4xl md:text-8xl text-center ">
             Reach The
             <br /> Uncharted Horizon
           </div>
-          <div className="text-white text-center m-24 ">
+          <div className="text-white text-center md:m-24 ">
             Customer satisfaction is at the heart of everything we do. We are
             committed to providing exceptional IT services that exceed your
             expectations and help you achieve your business goals.
