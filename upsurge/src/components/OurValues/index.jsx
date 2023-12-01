@@ -1,6 +1,4 @@
-import { motion, useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { useEffect } from 'react'
+import ValueCard from './ValueCard'
 
 export default function OurValues() {
   const values = [
@@ -68,45 +66,5 @@ export default function OurValues() {
         </div>
       </div>
     </section>
-  )
-}
-
-function ValueCard({ color, title, content }) {
-  const controls = useAnimation()
-  const [ref, inView] = useInView()
-
-  const variants = {
-    down: { y: '200px' },
-    placed: { y: 0, transition: { type: 'tween', duration: 1 } },
-  }
-
-  useEffect(() => {
-    if (inView) controls.start('placed')
-  }, [controls, inView])
-
-  return (
-    <motion.div
-      ref={ref}
-      variants={variants}
-      initial="down"
-      animate={controls}
-      className="flex flex-col items-center text-center gap-[13px]"
-    >
-      <StyleSquare color={color} />
-      <h3 className="text-[30px]">{title}</h3>
-      <p className="font-[300]">{content}</p>
-    </motion.div>
-  )
-}
-
-function StyleSquare({ color }) {
-  return (
-    <div className="w-[60px] h-[60px] relative">
-      <div
-        className="rounded-[10px] w-[50px] h-[50px] absolute"
-        style={{ backgroundColor: color }}
-      ></div>
-      <div className="rounded-[10px] w-[50px] h-[50px] bg-white opacity-60 absolute bottom-0 right-0"></div>
-    </div>
   )
 }
