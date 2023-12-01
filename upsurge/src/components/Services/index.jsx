@@ -1,15 +1,14 @@
-import softwareImg from '../../assets/what-can-we-do-for-you/software.svg'
-import graphicsImg from '../../assets/what-can-we-do-for-you/graphics.svg'
-import ecommerceImg from '../../assets/what-can-we-do-for-you/ecommerce.svg'
-import webImg from '../../assets/what-can-we-do-for-you/web.svg'
-import mobileImg from '../../assets/what-can-we-do-for-you/mobile.svg'
+import softwareImg from '../../assets/services/software.svg'
+import graphicsImg from '../../assets/services/graphics.svg'
+import ecommerceImg from '../../assets/services/ecommerce.svg'
+import webImg from '../../assets/services/web.svg'
+import mobileImg from '../../assets/services/mobile.svg'
 
 import style from './style.module.css'
 import DevelopmentCard from './DevelopmentCard'
 import Bridge from './Bridge'
 
-
-export default function WhatCanWeDoForYou() {
+export default function Services() {
   const developments = [
     {
       image: webImg,
@@ -49,7 +48,7 @@ establish a strong online presence.`,
   ]
 
   return (
-    <section className="bg-black py-[162px] px-[1rem] ">
+    <section id="services" className="bg-black py-[162px] px-[1rem] ">
       <div className="text-center pb-[100px] md:pb-[278px]">
         <h2 className="text-[40px] text-white">WHAT CAN WE DO FOR YOU</h2>
         <p className="text-[32px] text-[#948989]">

@@ -1,11 +1,13 @@
-import Home from './components/home/home'
+import Home from './components/home/home.jsx'
+import Services from './components/Services'
 
 function App() {
   return (
-    <main className="bg-[#050D1F] w-screen h-screen">
+    <main >
       <Home />
+      <Services />
     </main>
   )
 }
 
-export default App;
+export default App
