@@ -1,10 +1,13 @@
-import Home from "./components/home/home";
-// import Whyus from "./components/whyus/whyus";
+import Home from "./components/home/home.jsx";
+import Services from "./components/Services";
+import OurValues from "./components/OurValues";
 
 function App() {
   return (
-    <main className="bg-[#050D1F] min-w-screen min-h-screen">
+    <main>
       <Home />
+      <Services />
+      <OurValues />
     </main>
   );
 }
