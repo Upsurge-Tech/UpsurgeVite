@@ -1,0 +1,57 @@
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 60s linear infinite; 
+}
+
+/* @keyframes rotate-circular {
+  0% {
+    transform: rotate(0deg) translateX(200px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(200px) rotate(-360deg);
+  }
+}
+
+.rotate-circular {
+  animation: rotate-circular 60s linear infinite; 
+} */
+
+/* @keyframes rotate-front-back {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.rotate-front-back {
+  animation: rotate-front-back 60s linear infinite; 
+} */
+
+/* @keyframes rotate-3d {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.rotate-3d {
+  animation: rotate-3d 10s linear infinite;
+  transform-style: preserve-3d;
+} */
+
+

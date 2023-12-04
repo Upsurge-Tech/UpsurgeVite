@@ -1,10 +1,15 @@
-import "./App.css";
-import Career from "./components/career/career";
+import Home from "./components/home/home.jsx";
+import Services from "./components/Services";
+import OurValues from "./components/OurValues";
+import Whyus from "./components/whyus/whyus.jsx";
 
 function App() {
   return (
-    <main className=" w-screen h-screen">
-      <Career />
+    <main>
+      <Home />
+      <Services />
+      <OurValues />
+      <Whyus />
     </main>
   );
 }

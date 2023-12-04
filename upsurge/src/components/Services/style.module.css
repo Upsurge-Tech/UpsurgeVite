@@ -1,0 +1,44 @@
+.grid {
+  display: grid;
+  grid-template-columns: 5fr 2fr 5fr;
+  /* 11 rows but 4*2 in template rows, having less is safe not to have empty rows */
+  grid-template-rows: repeat(4, 1fr 5fr);
+  grid-template-areas:
+    'A . .'
+    'A . .'
+    'A . B'
+    'a a B'
+    'C . B'
+    'C b b'
+    'C . D'
+    'c c D'
+    'E . D'
+    'E d d'
+    'E . .';
+}
+
+@media screen and (max-width: 788px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, 5fr 1fr);
+    grid-template-areas:
+      'A A .'
+      'a . .'
+      'a B B'
+      '. . b'
+      'C C b'
+      'c . .'
+      'c D D'
+      '. . d'
+      'E E d';
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /*Bridges should be hidden through tailwind*/
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
