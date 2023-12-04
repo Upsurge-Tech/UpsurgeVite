@@ -42,8 +42,8 @@ const Career = () => {
     });
   }, []);
   return (
-    <main className="bg-[#050D1F] min-w-screen min-h-screen">
-      <div className="text-white flex flex-col md:flex-row w-full md:w-screen">
+    <main id="career" className="bg-[#050D1F] min-w-screen min-h-screen">
+      <div className="text-white flex flex-col md:flex-row w-full md:w-full">
         <div ref={video_load} className="flex w-full md:w-[50%]">
           <video className="w-full h-full object-cover" autoPlay loop muted>
             <source src={globe} type="video/mp4" />
