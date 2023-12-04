@@ -60,7 +60,7 @@ const Whyus = () => {
 
         <div
           ref={line}
-          className="lg:h-[450px] lg:w-0 lg:border-r-2 border-b-2 w-[350px]"
+          className="lg:h-[450px] lg:w-0 lg:border-r-2 border-b-2 w-[300px]"
           style={{
             borderImage: "linear-gradient(to bottom, #69DBFF, white)",
             borderImageSlice: 1,
