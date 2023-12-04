@@ -11,17 +11,6 @@ const Whyus = () => {
   useEffect(() => {
     const T1 = gsap.timeline();
 
-    // fade-in
-    // const fadeInTimeline = gsap.timeline({ repeat: -1, repeatDelay: 1 });
-    // fadeInTimeline.to(line.current, { opacity: 1, duration: 1 });
-    // fadeInTimeline.to({}, { duration: 2 });
-    // Fade Out
-    // fadeInTimeline.to(line.current, { opacity: 1, duration: 1 });
-
-    // Add fade-in timeline to the main timeline
-    // T1.add(fadeInTimeline);
-
-    // Other animations
     T1.fromTo(
       whyus.current,
       { opacity: 0, y: -100 },
@@ -63,7 +52,7 @@ const Whyus = () => {
   }, []);
 
   return (
-    <main className="min-w-screen min-h-screen">
+    <main className="bg-black min-w-screen min-h-screen">
       <div className="text-white flex flex-col lg:flex-row items-center md:items-center justify-center gap-8 md:gap-20 p-16 md:p-32">
         <div ref={whyus} className="text-4xl md:text-5xl w-96 pl-10 sm:p-2 ">
           Why <span className="text-[#00CDC1]">Us</span>?
@@ -75,7 +64,6 @@ const Whyus = () => {
           style={{
             borderImage: "linear-gradient(to bottom, #69DBFF, white)",
             borderImageSlice: 1,
-            // backgroundImage: "linear-gradient(to bottom, blue, white)",
           }}
         ></div>
 
