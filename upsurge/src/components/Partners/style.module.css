@@ -1,0 +1,14 @@
+@keyframes scroll-animation {
+    0% {
+        transform: translate(0%);
+    }
+
+    100%{
+        transform: translate(-50%);
+    }
+    
+}
+
+.infinite-scroll{
+    animation: scroll-animation 2s linear infinite;
+}

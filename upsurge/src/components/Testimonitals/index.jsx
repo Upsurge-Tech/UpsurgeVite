@@ -107,7 +107,7 @@ export default function Testimonials() {
           .slice(1, testimonials.length - 1)
           .map((testimonial, i) => (
             <button
-              className={i + 1 === index ? 'bg-black' : ''}
+              className={i + 1 === index ? 'bg-white' : 'bg-[grey]'}
               key={testimonial.id}
             >
               o
