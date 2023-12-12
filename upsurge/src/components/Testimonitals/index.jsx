@@ -85,7 +85,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section className='bg-black py-[100px] '>
+    <section className='bg-black py-[100px] px-[1rem]'>
       <div className='max-w-[1480px] m-auto'>
         <div className='flex items-center gap-[63px] pb-[120px]'>
           <h2 className='text-[64px] text-white'>Testimonials</h2>
@@ -99,7 +99,7 @@ export default function Testimonials() {
         >
           {testimonials.map((testimonial, i) => (
             <div
-              className='flex-shrink-0 snap-center w-[470px] '
+              className='flex-shrink-0 snap-center w-[300px] md:w-[470px] '
               ref={refs[i]}
               key={testimonial.id}
             >
@@ -128,9 +128,9 @@ export default function Testimonials() {
 function TestimonialCard({ testimonial }) {
   return (
     <div className='bg-[#18181C] rounded-[20px] text-white p-[40px] text-[18px] flex flex-col gap-[32px] font-Poppins'>
-      <p className='leading-[38px]'>{testimonial.content}</p>
+      <p className='md:leading-[38px]'>{testimonial.content}</p>
       <hr className='border-[#404047]' />
-      <div className='flex justify-between items-center'>
+      <div className='flex flex-col gap-3 md:gap-0 md:flex-row justify-between items-center'>
         <div className='flex gap-[20px]'>
           <img
             src={testimonial.profileImage}

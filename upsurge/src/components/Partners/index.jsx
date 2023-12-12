@@ -37,8 +37,8 @@ export default function Partners() {
   const imageWidth = 270
   const imageGap = 100
   return (
-    <section className='bg-black py-[100px] '>
-      <div className='flex items-center gap-[63px] pb-[120px] max-w-[1480px] m-auto'>
+    <section className='bg-black py-[100px]'>
+      <div className='flex items-center gap-[63px] pb-[120px] max-w-[1480px] m-auto px-[1rem]'>
         <h2 className='text-[64px] text-white'>
           Our <span className='text-[#5cc0e0]'>Partners</span>
         </h2>
@@ -48,7 +48,7 @@ export default function Partners() {
       <motion.div
         animate={{ x: ['0%', '-50%'] }}
         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        className={`flex justify-around opacity-50`}
+        className='flex justify-around opacity-50'
         style={{
           width: repeatedPartners.length * (imageWidth + imageGap) + 'px',
         }}
