@@ -30,20 +30,32 @@ export default function Partners() {
       image: partner5Img,
     },
   ]
+  const repitions = 2
+  const repeatedPartners = []
+  for (let i = 0; i < repitions; i++) {
+    repeatedPartners.push(...partners)
+  }
 
   const imageWidth = 270
   const imageGap = 100
   return (
-    <section className='bg-black overflow-hidden'>
+    <section className='bg-black py-[100px] '>
+      <div className='flex items-center gap-[63px] pb-[120px] max-w-[1480px] m-auto'>
+        <h2 className='text-[64px] text-white'>
+          Our <span className='text-[#5cc0e0]'>Partners</span>
+        </h2>
+        <div className='flex-1 bg-gradient-to-r from-[#6adbfe] to-white h-[3px]'></div>
+      </div>
+
       <motion.div
         animate={{ x: ['0%', '-50%'] }}
         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        className={`flex justify-around`}
+        className={`flex justify-around opacity-50`}
         style={{
-          width: 2 * partners.length * (imageWidth + imageGap) + 'px',
+          width: repeatedPartners.length * (imageWidth + imageGap) + 'px',
         }}
       >
-        {[...partners, ...partners].map(({ name, image }, i) => (
+        {repeatedPartners.map(({ name, image }, i) => (
           <img
             src={image}
             alt={name}
