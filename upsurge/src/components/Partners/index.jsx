@@ -4,8 +4,6 @@ import partner3Img from '../../assets/testimonials-and-partners/partner-3.svg'
 import partner4Img from '../../assets/testimonials-and-partners/partner-4.svg'
 import partner5Img from '../../assets/testimonials-and-partners/partner-5.svg'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
-import style from './style.module.css'
 
 export default function Partners() {
   const partners = [
