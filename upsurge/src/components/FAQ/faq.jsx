@@ -1,6 +1,53 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Question = () => {
+  const faq = useRef(null);
+  const line = useRef(null);
+  const main_faq = useRef(null);
+
+  useEffect(() => {
+    const T1 = gsap.timeline();
+    T1.fromTo(
+      faq.current,
+      { opacity: 0, x: -100 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.inOut",
+      }
+    );
+    T1.fromTo(
+      line.current,
+      { opacity: 0, x: 100 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.inOut",
+      }
+    );
+    T1.fromTo(
+      main_faq.current,
+      { opacity: 0, y: -100 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 2,
+        ease: "power2.inOut",
+      }
+    );
+
+    ScrollTrigger.create({
+      trigger: faq.current,
+      start: "top 80%",
+      animation: T1,
+    });
+  }, []);
+
   const [active, setActive] = useState(-1);
   const question = [
     {
@@ -38,11 +85,19 @@ const Question = () => {
   };
   return (
     <main className="flex flex-col min-w-full h-full bg-black p-5 md:p-10 text-white">
-      <div className="flex flex-row items-center gap-5 md:gap-10 pb-5 md:pb-10">
-        <h2 className="text-4xl md:text-5xl">FAQ&#39;s</h2>
-        <div className="flex-1 bg-gradient-to-r from-[#6adbfe] to-white h-2 md:h-[3px]"></div>
+      <div className="flex flex-row items-center gap-10 md:gap-10 pb-5 md:pb-10 p-20">
+        <h2 ref={faq} className="text-4xl md:text-5xl">
+          FAQ&#39;s
+        </h2>
+        <div
+          ref={line}
+          className="flex-0 bg-gradient-to-r from-[#6adbfe] to-white h-2 md:h-[3px]  md:flex-1"
+        ></div>
       </div>
-      <div className="border-2 border-dashed border-[#9747FF] mx-2 md:mx-32 mb-5 md:mb-14 p-5 md:p-14">
+      <div
+        ref={main_faq}
+        className="border-2 border-dashed border-[#9747FF] mx-1 lg:mx-32 mb-5 md:mb-14 p-5 md:p-14 mt-20"
+      >
         {question?.map((questions, index) => (
           <div key={index} className="flex flex-col text-white pb-3 md:pb-5">
             <div
@@ -54,7 +109,7 @@ const Question = () => {
                   {questions.number}
                 </p>
                 <div className="flex flex-col gap-2 md:gap-4">
-                  <p className="text-lg md:text-2xl font-medium">
+                  <p className="text-md md:text-2xl font-medium">
                     {questions.question}
                   </p>
                   <p
@@ -69,12 +124,12 @@ const Question = () => {
                 </div>
               </div>
               {active === index ? (
-                <div className="flex text-3xl w-24 h-14 bg-[#4FA9E2] items-center justify-center rounded-lg">
+                <div className="flex text-3xl w-14 h-8 md:w-24 md:h-14 bg-[#4FA9E2] items-center justify-center rounded-lg">
                   -
                   {/* <img src={minus} alt="minus-sign" height={30} width={30} /> */}
                 </div>
               ) : (
-                <div className="flex text-3xl w-24 h-14 bg-[#152329] items-center justify-center rounded-lg">
+                <div className="flex text-3xl w-14 h-8 md:w-24 md:h-14 bg-[#152329] items-center justify-center rounded-lg">
                   +
                   {/* <img src={plus} alt="plus-sign" height={30} width={30} /> */}
                 </div>
