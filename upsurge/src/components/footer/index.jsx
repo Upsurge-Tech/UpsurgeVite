@@ -8,18 +8,39 @@ import telegramImg from '../../assets/footer/telegram.svg'
 import upsurgeLogo from '../../assets/AlliedgeLogo_PNG 2.svg'
 
 export default function Footer() {
+  const socialMedia = [
+    { name: 'facebook', image: facebookImg, link: '' },
+    { name: 'instagram', image: instagramImg, link: '' },
+    { name: 'tweeter', image: tweeterImg, link: '' },
+    { name: 'linkedin', image: linkedinImg, link: '' },
+    { name: 'github', image: githubImg, link: '' },
+    { name: 'pinterest', image: pinterestImg, link: '' },
+    { name: 'telegram', image: telegramImg, link: '' },
+  ]
+
   return (
-    <footer>
-      <nav>
-        <div>
-          <h3>Company</h3>
+    <footer
+      className={`
+      bg-black text-white px-[2rem] py-[120px]
+      flex flex-col gap-[150px]
+      `}
+    >
+      <div className='flex gap-[20px] flex-wrap'>
+        {socialMedia.map((item) => (
+          <SocialMedia key={item.name} {...item} />
+        ))}
+      </div>
+      <div className='flex flex-col pl gap-[4rem] justify-between text-[20px]'>
+        <img src={upsurgeLogo} alt="" className='w-[30%]'/>
+        <nav className='flex flex-col gap-[15px]'>
+          <h3 className='font-[600] text-[32px]'>Company</h3>
           <a href=''>Home</a>
           <a href=''>Services</a>
           <a href=''>About Us</a>
           <a href=''>Contact Us</a>
-        </div>
-        <div>
-          <h3>Services</h3>
+        </nav>
+        <div className='flex flex-col gap-[15px]'>
+          <h3 className='font-[600] text-[32px]'>Services</h3>
           <p>Web Development</p>
           <p>Mobile Development</p>
           <p>Software Development</p>
@@ -27,8 +48,8 @@ export default function Footer() {
           <p>Graphics Design</p>
         </div>
 
-        <div>
-          <h3>Contact Us</h3>
+        <div className='flex flex-col gap-[15px]'>
+          <h3 className='font-[600] text-[32px]'>Contact Us</h3>
           <p>
             5Kilo Arada, <br />
             Addis Ababa
@@ -36,7 +57,25 @@ export default function Footer() {
           <p>+251930365902</p>
           <p>upsurge@upsurge.com</p>
         </div>
-      </nav>
+      </div>
+      <p className='text-[20px]'>
+        © Copyright 2023, Upsurge Tech. All Rights Reserved
+      </p>
     </footer>
+  )
+}
+
+function SocialMedia({ image, link, name }) {
+  return (
+    <a href={link}>
+      <button
+        className={`
+        w-[100px] h-[100px] bg-[#222228] rounded-[30px]
+        flex items-center justify-center
+      `}
+      >
+        <img src={image} alt={name} />
+      </button>
+    </a>
   )
 }
