@@ -28,14 +28,7 @@ export default function Partners() {
       image: partner5Img,
     },
   ]
-  const repitions = 2
-  const repeatedPartners = []
-  for (let i = 0; i < repitions; i++) {
-    repeatedPartners.push(...partners)
-  }
 
-  const imageWidth = 270
-  const imageGap = 100
   return (
     <section className='bg-black py-[100px]'>
       <div className='flex items-center gap-[63px] pb-[120px] max-w-[1480px] m-auto px-[1rem]'>
@@ -45,24 +38,26 @@ export default function Partners() {
         <div className='flex-1 bg-gradient-to-r from-[#6adbfe] to-white h-[3px]'></div>
       </div>
 
-      <motion.div
-        animate={{ x: ['0%', '-50%'] }}
-        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        className='flex justify-around opacity-50'
-        style={{
-          width: repeatedPartners.length * (imageWidth + imageGap) + 'px',
-        }}
-      >
-        {repeatedPartners.map(({ name, image }, i) => (
-          <img
-            src={image}
-            alt={name}
-            className=' inline-block'
-            key={i}
-            style={{ width: imageWidth + 'px' }}
-          />
-        ))}
-      </motion.div>
+      {/* flex to make it actaully translateX by -50%. Translates much less othewise, I don't understand why.  */}
+      <div className='overflow-hidden flex'>
+        <motion.div
+          className='flex opacity-60'
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{ duration: 3, ease: 'linear', repeat: Infinity }}
+        >
+          {[...partners, ...partners].map(({ name, image }, i) => (
+            <img
+              src={image}
+              alt={name}
+              className='mx-[50px] w-[180px] md:w-[300px]'
+              /* maxWidth:100% (default in tailwind) breaks translateX(-50%)
+                by making it translate much less. I don't understand why! */
+              style={{ maxWidth: 'none' }}
+              key={i}
+            />
+          ))}
+        </motion.div>
+      </div>
     </section>
   )
 }
