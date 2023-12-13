@@ -29,6 +29,8 @@ export default function Partners() {
     },
   ]
 
+  const repeatedPartners = [...partners, ...partners, ...partners]
+
   return (
     <section className='bg-black py-[100px]'>
       <div className='flex items-center gap-[63px] pb-[120px] max-w-[1480px] m-auto px-[1rem]'>
@@ -43,13 +45,13 @@ export default function Partners() {
         <motion.div
           className='flex opacity-60'
           animate={{ x: ['0%', '-50%'] }}
-          transition={{ duration: 3, ease: 'linear', repeat: Infinity }}
+          transition={{ duration: 20, ease: 'linear', repeat: Infinity }}
         >
-          {[...partners, ...partners].map(({ name, image }, i) => (
+          {repeatedPartners.map(({ name, image }, i) => (
             <img
               src={image}
               alt={name}
-              className='mx-[50px] w-[180px] md:w-[300px]'
+              className='mx-[50px] w-[180px] lg:w-[320px]'
               /* maxWidth:100% (default in tailwind) breaks translateX(-50%)
                 by making it translate much less. I don't understand why! */
               style={{ maxWidth: 'none' }}

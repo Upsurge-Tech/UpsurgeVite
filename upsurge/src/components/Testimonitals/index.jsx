@@ -1,8 +1,9 @@
-import { createRef, useState, useRef } from 'react'
+import { useEffect } from 'react'
 import profileImage from '../../assets/testimonials-and-partners/profile.png'
+import useEmblaCarousel from 'embla-carousel-react'
+import { useState } from 'react'
 
 export default function Testimonials() {
-  //Assume >= 4 testimonialsx
   const testimonials = [
     {
       id: 0,
@@ -14,7 +15,7 @@ export default function Testimonials() {
     },
     {
       id: 1,
-      content: `Designers need to have a strong understanding of the principles of design in order to create effective solutions. They must also be aware of the latest trends and technologies so that they can stay ahead of the curve.`,
+      content: `They must also be aware of the latest trends and technologies so that they can stay ahead of the curve.`,
       name: 'Jane Doe',
       description: 'CEO of Inkyy.com',
       profileImage: profileImage,
@@ -31,7 +32,7 @@ export default function Testimonials() {
 
     {
       id: 3,
-      content: `Designers need to have a strong understanding of the principles of design in order to create effective solutions. They must also be aware of the latest trends and technologies so that they can stay ahead of the curve.`,
+      content: `Designers nsign in order to create effective solutions. They must also be aware of the latest trends and technologies so that they can stay ahead of the curve.`,
       name: 'Jane Doe',
       description: 'CEO of Inkyy.com',
       profileImage: profileImage,
@@ -57,78 +58,84 @@ export default function Testimonials() {
     },
   ]
 
-  const [index, setIndex] = useState(1)
-
-  const parentRef = useRef()
-  const refs = testimonials.map(() => createRef())
-  const updateIndex = () => {
-    if (!parentRef.current) return
-
-    let centerMostIndex = undefined
-    let centerMostDistance = Infinity
-
-    const parentRect = parentRef.current.getBoundingClientRect()
-    const parentCenter = parentRect.x + parentRect.width / 2
-
-    for (let i = 0; i < refs.length; i++) {
-      const childRect = refs[i].current.getBoundingClientRect()
-      const childCenter = childRect.x + childRect.width / 2
-
-      const distance = Math.abs(parentCenter - childCenter)
-      if (distance < centerMostDistance) {
-        centerMostDistance = distance
-        centerMostIndex = i
-      }
-    }
-    // Recreate the refs
-    setIndex(centerMostIndex)
-  }
-
   return (
-    <section className='bg-black py-[100px] px-[1rem]'>
-      <div className='max-w-[1480px] m-auto'>
-        <div className='flex items-center gap-[63px] pb-[120px]'>
+    <section className='bg-black py-[100px] '>
+      <div className='max-w-[1480px] m-auto '>
+        <div className='flex items-center gap-[63px] pb-[120px] px-[1rem]'>
           <h2 className='text-[64px] text-white'>Testimonials</h2>
           <div className='flex-1 bg-gradient-to-r from-[#6adbfe] to-white h-[3px]'></div>
         </div>
-
-        <div
-          className=' flex overflow-scroll snap-x snap-mandatory gap-5'
-          onScroll={updateIndex}
-          ref={parentRef}
-        >
-          {testimonials.map((testimonial, i) => (
-            <div
-              className='flex-shrink-0 snap-center w-[300px] md:w-[470px] '
-              ref={refs[i]}
-              key={testimonial.id}
-            >
-              <TestimonialCard testimonial={testimonial} />
-            </div>
-          ))}
-        </div>
-
-        <div>
-          {testimonials
-            .slice(1, testimonials.length - 1)
-            .map((testimonial, i) => (
-              <button
-                className={i + 1 === index ? 'bg-white' : 'bg-[grey]'}
-                key={testimonial.id}
-              >
-                o
-              </button>
-            ))}
-        </div>
+        <TestimonialSlider testimonials={testimonials} />
       </div>
     </section>
   )
 }
 
+function TestimonialSlider({ testimonials }) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
+  const scroll = (index) => emblaApi && emblaApi.scrollTo(index)
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    if (!emblaApi) return
+
+    const onSelect = () => {
+      const newIndex = emblaApi.selectedScrollSnap()
+      setIndex(newIndex)
+
+      console.log(newIndex)
+    }
+    emblaApi.on('select', onSelect)
+    onSelect()
+  }, [emblaApi])
+
+  return (
+    <div>
+      <div
+        ref={emblaRef}
+        className='text-white overflow-hidden cursor-pointer select-none'
+      >
+        <div className='flex snap-center'>
+          {testimonials.map((testimonial) => (
+            <TestimonialCard testimonial={testimonial} key={testimonial.id} />
+          ))}
+        </div>
+      </div>
+
+      <div className='flex justify-center gap-[15px] pt-[50px] md:pt-[121px]'>
+        {testimonials.map((_, i) => (
+          <TestimonialDot
+            key={i}
+            active={i === index}
+            onClick={() => scroll(i)}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function TestimonialDot({ active, onClick }) {
+  return (
+    <button
+      className={`
+      w-[16px] h-[16px] rounded-[100%]
+      ${active ? 'bg-[#00ffff]' : 'bg-[#18171c]'}
+    `}
+      onClick={onClick}
+    ></button>
+  )
+}
+
 function TestimonialCard({ testimonial }) {
   return (
-    <div className='bg-[#18181C] rounded-[20px] text-white p-[40px] text-[18px] flex flex-col gap-[32px] font-Poppins'>
-      <p className='md:leading-[38px]'>{testimonial.content}</p>
+    <div
+      className={`
+        w-[300px] md:w-[470px] shrink-0 mx-[15px] p-[40px]
+      bg-[#18181C] text-white rounded-[20px] text-[18px] font-Poppins
+        flex flex-col gap-[32px]`}
+    >
+      <p className='md:leading-[38px] flex-1'>{testimonial.content}</p>
       <hr className='border-[#404047]' />
       <div className='flex flex-col gap-3 md:gap-0 md:flex-row justify-between items-center'>
         <div className='flex gap-[20px]'>
