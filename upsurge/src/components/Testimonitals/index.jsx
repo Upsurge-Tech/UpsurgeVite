@@ -57,7 +57,7 @@ export default function Testimonials() {
   ]
 
   return (
-    <section className='bg-black py-[100px] '>
+    <section className='bg-black py-[100px] ' id='testimonials'>
       <div className='max-w-[1480px] m-auto '>
         <div className='flex items-center gap-[63px] pb-[120px] px-[1rem]'>
           <h2 className='text-[64px] text-white'>Testimonials</h2>

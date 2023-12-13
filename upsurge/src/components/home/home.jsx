@@ -53,7 +53,7 @@ const Home = () => {
     { name: 'Home', to: '#home' },
     { name: 'Services', to: '#services' },
     { name: 'Career', to: '#' },
-    { name: 'Testimonials', to: '#' },
+    { name: 'Testimonials', to: '#testimonials' },
     { name: 'Team', to: '#' },
     { name: 'Contact Us', to: '#' },
   ]
