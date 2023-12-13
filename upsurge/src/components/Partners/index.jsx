@@ -29,7 +29,8 @@ export default function Partners() {
     },
   ]
 
-  const repeatedPartners = [...partners, ...partners, ...partners]
+  //could've repeated twice, but may not fill the screen on big screens
+  const repeatedPartners = [...partners, ...partners, ...partners, ...partners]
 
   return (
     <section className='bg-black py-[100px]'>
@@ -40,7 +41,7 @@ export default function Partners() {
         <div className='flex-1 bg-gradient-to-r from-[#6adbfe] to-white h-[3px]'></div>
       </div>
 
-      {/* flex to make it actaully translateX by -50%. Translates much less othewise, I don't understand why.  */}
+      {/* flex to make it actually translateX by -50%. Translates much less othewise, I don't understand why.  */}
       <div className='overflow-hidden flex'>
         <motion.div
           className='flex opacity-60'
