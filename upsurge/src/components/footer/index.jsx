@@ -6,6 +6,7 @@ import githubImg from '../../assets/footer/github.svg'
 import pinterestImg from '../../assets/footer/pinterest.svg'
 import telegramImg from '../../assets/footer/telegram.svg'
 import upsurgeLogo from '../../assets/AlliedgeLogo_PNG 2.svg'
+import SocialMedia from './SocialMedia'
 
 export default function Footer() {
   const socialMedia = [
@@ -62,20 +63,5 @@ export default function Footer() {
         © Copyright 2023, Upsurge Tech. All Rights Reserved
       </p>
     </footer>
-  )
-}
-
-function SocialMedia({ image, link, name }) {
-  return (
-    <a href={link}>
-      <button
-        className={`
-        w-[100px] h-[100px] bg-[#222228] rounded-[30px]
-        flex items-center justify-center
-      `}
-      >
-        <img src={image} alt={name} />
-      </button>
-    </a>
   )
 }
