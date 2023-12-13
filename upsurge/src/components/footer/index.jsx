@@ -20,48 +20,42 @@ export default function Footer() {
   ]
 
   return (
-    <footer
-      className={`
-      bg-black text-white px-[2rem] py-[120px]
-      flex flex-col gap-[150px]
-      `}
-    >
-      <div className='flex gap-[20px] flex-wrap justify-center'>
-        {socialMedia.map((item) => (
-          <SocialMedia key={item.name} {...item} />
-        ))}
-      </div>
-      <div className='flex flex-col md:flex-row lg:justify-around  gap-[4rem] justify-between text-[20px]'>
-        <img src={upsurgeLogo} alt='' className='max-w-[250px]' />
-        <nav className='flex flex-col gap-[15px]'>
-          <h3 className='font-[600] text-[32px]'>Company</h3>
-          <a href=''>Home</a>
-          <a href=''>Services</a>
-          <a href=''>About Us</a>
-          <a href=''>Contact Us</a>
-        </nav>
-        <div className='flex flex-col gap-[15px]'>
-          <h3 className='font-[600] text-[32px]'>Services</h3>
-          <p>Web Development</p>
-          <p>Mobile Development</p>
-          <p>Software Development</p>
-          <p>Ecommerce Development</p>
-          <p>Graphics Design</p>
+    <footer className='bg-black text-white px-[2rem] py-[120px] '>
+      <div className='flex flex-col gap-[150px] max-w-[1470px] mx-auto'>
+        <div className='flex gap-[20px] flex-wrap justify-center'>
+          {socialMedia.map((item) => (
+            <SocialMedia key={item.name} {...item} />
+          ))}
         </div>
+        <div className='flex flex-col md:flex-row lg:justify-around  gap-[4rem] justify-between text-[20px]'>
+          <img src={upsurgeLogo} alt='' className='max-w-[250px]' />
+          <nav className='flex flex-col gap-[15px] md:gap-[30px]'>
+            <h3 className='font-[600] text-[32px] md:pb-[20px]'>Company</h3>
+            <a href=''>Home</a>
+            <a href=''>Services</a>
+            <a href=''>About Us</a>
+            <a href=''>Contact Us</a>
+          </nav>
+          <div className='flex flex-col gap-[15px] md:gap-[30px]'>
+            <h3 className='font-[600] text-[32px] md:pb-[20px]'>Services</h3>
+            <p>Web Development</p>
+            <p>Mobile Development</p>
+            <p>Software Development</p>
+            <p>Ecommerce Development</p>
+            <p>Graphics Design</p>
+          </div>
 
-        <div className='flex flex-col gap-[15px]'>
-          <h3 className='font-[600] text-[32px]'>Contact Us</h3>
-          <p>
-            5Kilo Arada, <br />
-            Addis Ababa
-          </p>
-          <p>+251930365902</p>
-          <p>upsurge@upsurge.com</p>
+          <div className='flex flex-col gap-[15px] md:gap-[30px]'>
+            <h3 className='font-[600] text-[32px] md:pb-[20px]'>Contact Us</h3>
+            <p>5Kilo Arada, Addis Ababa</p>
+            <p>+251930365902</p>
+            <p>upsurge@upsurge.com</p>
+          </div>
         </div>
+        <p className='text-[20px] text-center'>
+          © Copyright 2023, Upsurge Tech. All Rights Reserved
+        </p>
       </div>
-      <p className='text-[20px] text-center'>
-        © Copyright 2023, Upsurge Tech. All Rights Reserved
-      </p>
     </footer>
   )
 }
