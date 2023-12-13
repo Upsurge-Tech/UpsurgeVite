@@ -25,13 +25,13 @@ export default function Footer() {
       flex flex-col gap-[150px]
       `}
     >
-      <div className='flex gap-[20px] flex-wrap'>
+      <div className='flex gap-[20px] flex-wrap justify-center'>
         {socialMedia.map((item) => (
           <SocialMedia key={item.name} {...item} />
         ))}
       </div>
-      <div className='flex flex-col pl gap-[4rem] justify-between text-[20px]'>
-        <img src={upsurgeLogo} alt="" className='w-[30%]'/>
+      <div className='flex flex-col md:flex-row lg:justify-around  gap-[4rem] justify-between text-[20px]'>
+        <img src={upsurgeLogo} alt='' className='max-w-[250px]' />
         <nav className='flex flex-col gap-[15px]'>
           <h3 className='font-[600] text-[32px]'>Company</h3>
           <a href=''>Home</a>
@@ -58,7 +58,7 @@ export default function Footer() {
           <p>upsurge@upsurge.com</p>
         </div>
       </div>
-      <p className='text-[20px]'>
+      <p className='text-[20px] text-center'>
         © Copyright 2023, Upsurge Tech. All Rights Reserved
       </p>
     </footer>
