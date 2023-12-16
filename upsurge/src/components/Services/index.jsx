@@ -49,7 +49,7 @@ establish a strong online presence.`,
 
   return (
     <section id="services" className="bg-black py-[162px] px-[1rem] ">
-      <div className="text-center pb-[100px] md:pb-[278px]">
+      <div className="text-center pb-[100px]">
         <h2 className="text-[40px] text-white">WHAT CAN WE DO FOR YOU</h2>
         <p className="text-[32px] text-[#948989]">
           We develop softwares that helps millions of professionals
