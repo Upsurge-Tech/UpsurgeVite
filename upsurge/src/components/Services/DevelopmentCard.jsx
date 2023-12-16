@@ -32,13 +32,13 @@ export default function DevelopmentCard({ development, gridArea }) {
     >
       <div
         className={`
-            flex-1  p-[30px] rounded-[9px] 
-            flex flex-col justify-center gap-[20px]
+            flex-1  p-[25px] rounded-[9px] 
+            flex flex-col justify-center gap-[10px]
             bg-gradient-to-br from-[#404040] to-black
     `}
       >
-        <img src={image} className="w-[100px] h-[100px]" />
-        <h3 className="text-[40px] leading-[40px] text-white">{title}</h3>
+        <img src={image} className="w-[80px] h-[80px]" />
+        <h3 className="text-[1.5rem] leading-[40px] text-white">{title}</h3>
         <p className="font-[600] text-[#948989]">{content}</p>
       </div>
     </motion.div>

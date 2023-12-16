@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 5fr 2fr 5fr;
   /* 11 rows but 4*2 in template rows, having less is safe not to have empty rows */
-  grid-template-rows: repeat(4, 1fr 5fr);
+
   grid-template-areas:
     'A . .'
     'A . .'
@@ -20,7 +20,6 @@
 @media screen and (max-width: 788px) {
   .grid {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(4, 5fr 1fr);
     grid-template-areas:
       'A A .'
       'a . .'
