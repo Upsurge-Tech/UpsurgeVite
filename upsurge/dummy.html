@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      img{
+        max-width: 100%;
+      }
+      body {
+        background-color: grey;
+      }
+      .logos {
+        overflow: hidden;
+        padding: 100px 0;
+        
+      }
+      
+      .logos-slide {
+        display: flex;
+        background-color: #da9e9e;
+        animation: 3s slide linear infinite;
+      }
+
+      img {
+        margin: 0 20px;
+        max-width: none;
+      }
+
+      @keyframes slide {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logos">
+      <div class="logos-slide">
+        <img src="src/assets/testimonials-and-partners/partner-1.svg" alt="" />
+        <img src="src/assets/testimonials-and-partners/partner-2.svg" alt="" />
+        <img src="src/assets/testimonials-and-partners/partner-3.svg" alt="" />
+        <img src="src/assets/testimonials-and-partners/partner-4.svg" alt="" />
+        <img src="src/assets/testimonials-and-partners/partner-5.svg" alt="" />
+        <img src="src/assets/testimonials-and-partners/partner-1.svg" alt="" />
+        <img src="src/assets/testimonials-and-partners/partner-2.svg" alt="" />
+        <img src="src/assets/testimonials-and-partners/partner-3.svg" alt="" />
+        <img src="src/assets/testimonials-and-partners/partner-4.svg" alt="" />
+        <img src="src/assets/testimonials-and-partners/partner-5.svg" alt="" />
+      </div>
+    </div>
+  </body>
+</html>

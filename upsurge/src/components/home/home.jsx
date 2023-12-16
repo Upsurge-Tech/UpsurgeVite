@@ -50,15 +50,16 @@ const Home = () => {
   }, []);
 
   const links = [
-    { name: "Home", to: "#home" },
-    { name: "Services", to: "#services" },
-    { name: "Career", to: "#career" },
-    { name: "Testimonials", to: "#" },
-    { name: "Team", to: "#" },
-    { name: "Contact Us", to: "#" },
-  ];
-  const [isOpen, setIsOpen] = useState(false);
-  const [active, setActive] = useState("");
+    { name: 'Home', to: '#home' },
+    { name: 'Services', to: '#services' },
+    { name: 'Career', to: '#career' },
+    { name: 'Testimonials', to: '#testimonials' },
+    { name: 'Team', to: '#' },
+    { name: 'Contact Us', to: '#' },
+  ]
+  const [isOpen, setIsOpen] = useState(false)
+  const [active, setActive] = useState('')
+
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
