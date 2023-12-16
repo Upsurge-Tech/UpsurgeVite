@@ -51,7 +51,7 @@ export default function OurValues() {
 
         <div
           className={`
-            grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[100px]
+            grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[95px]
         `}
         >
           {values.map(({ color, title, content }) => (
