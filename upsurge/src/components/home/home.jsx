@@ -1,17 +1,17 @@
-import { useEffect, useRef, useState } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import upsurge_logo from '../../assets/AlliedgeLogo_PNG 2.svg'
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import upsurge_logo from "../../assets/AlliedgeLogo_PNG 2.svg";
 // import globe from "../../assets/globe.mp4";
-import './home.css'
-gsap.registerPlugin(ScrollTrigger)
+import "./home.css";
+gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
-  const hero_txt = useRef(null)
-  const logo = useRef(null)
-  const nav_item = useRef(null)
+  const hero_txt = useRef(null);
+  const logo = useRef(null);
+  const nav_item = useRef(null);
 
   useEffect(() => {
-    const T1 = gsap.timeline()
+    const T1 = gsap.timeline();
     T1.fromTo(
       logo.current,
       { opacity: 0, x: -100 },
@@ -19,9 +19,9 @@ const Home = () => {
         opacity: 1,
         x: 0,
         duration: 1,
-        ease: 'power2.inOut',
+        ease: "power2.inOut",
       }
-    )
+    );
     T1.fromTo(
       nav_item.current,
       { opacity: 0, x: 100 },
@@ -29,9 +29,9 @@ const Home = () => {
         opacity: 1,
         x: 0,
         duration: 1,
-        ease: 'power2.inOut',
+        ease: "power2.inOut",
       }
-    )
+    );
     T1.fromTo(
       hero_txt.current,
       { opacity: 0, y: -100 },
@@ -39,33 +39,33 @@ const Home = () => {
         opacity: 1,
         y: 0,
         duration: 2,
-        ease: 'power2.inOut',
+        ease: "power2.inOut",
       }
-    )
+    );
     ScrollTrigger.create({
       trigger: hero_txt.current,
-      start: 'top 80%',
+      start: "top 80%",
       animation: T1,
-    })
-  }, [])
+    });
+  }, []);
 
   const links = [
-    { name: 'Home', to: '#home' },
-    { name: 'Services', to: '#services' },
-    { name: 'Career', to: '#' },
-    { name: 'Testimonials', to: '#' },
-    { name: 'Team', to: '#' },
-    { name: 'Contact Us', to: '#' },
-  ]
-  const [isOpen, setIsOpen] = useState(false)
-  const [active, setActive] = useState('')
+    { name: "Home", to: "#home" },
+    { name: "Services", to: "#services" },
+    { name: "Career", to: "#career" },
+    { name: "Testimonials", to: "#" },
+    { name: "Team", to: "#" },
+    { name: "Contact Us", to: "#" },
+  ];
+  const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState("");
   const toggleNavbar = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
   const handleActive = (name) => {
-    setActive(name)
-    console.log(name)
-  }
+    setActive(name);
+    console.log(name);
+  };
 
   return (
     <section
@@ -114,7 +114,7 @@ const Home = () => {
 
             <div
               className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
-                isOpen ? 'block' : 'hidden'
+                isOpen ? "block" : "hidden"
               }`}
               id="navbar-sticky"
             >
@@ -129,8 +129,8 @@ const Home = () => {
                       href={`${link.to}`}
                       className={`${
                         active === link.name
-                          ? 'text-[#0c9793] font-semibold'
-                          : 'py-2'
+                          ? "text-[#0c9793] font-semibold"
+                          : "py-2"
                       } relative block text-md pl-3 pr-4 transition duration-75 md:hover:bg-transparent md:hover:text-[#0c9793] md:p-0`}
                       aria-current="page"
                     >
@@ -181,8 +181,8 @@ const Home = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 // <div className="absolute inset-0 z-0 overflow-hidden">
 //         <video className="w-full h-full object-fit  " autoPlay loop muted>
@@ -191,4 +191,4 @@ const Home = () => {
 //         </video>
 //       </div>
 
-export default Home
+export default Home;
