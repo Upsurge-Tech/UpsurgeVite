@@ -49,7 +49,7 @@ establish a strong online presence.`,
 
   return (
     <section id="services" className={`
-      bg-black pb-[162px] px-[1rem]
+      bg-black pb-[100px] px-[1rem]
 
      `}>
       <div className="text-center pb-[100px]">

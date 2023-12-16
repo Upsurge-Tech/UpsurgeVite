@@ -40,9 +40,9 @@ export default function OurValues() {
     },
   ]
   return (
-    <section className="bg-[black] text-white px-[2rem] py-[80px] overflow-hidden">
-      <div className="max-w-[1400px] m-auto ">
-        <div className="flex items-center gap-[63px] pb-[164px]">
+    <section className="bg-[black] text-white px-[2rem] py-[100px] overflow-hidden">
+      <div className="max-w-[1000px] m-auto ">
+        <div className="flex items-center gap-[63px] pb-[100px]">
           <h2 className="text-4xl md:text-5xl ">
             Our <span className="text-[#5cc0e0]">Values</span>{' '}
           </h2>
@@ -51,8 +51,7 @@ export default function OurValues() {
 
         <div
           className={`
-            grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[150px]
-            max-w-[1070px] m-auto 
+            grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[100px]
         `}
         >
           {values.map(({ color, title, content }) => (
