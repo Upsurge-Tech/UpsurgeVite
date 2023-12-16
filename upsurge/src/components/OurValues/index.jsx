@@ -43,7 +43,7 @@ export default function OurValues() {
     <section className="bg-[black] text-white px-[2rem] py-[80px] overflow-hidden">
       <div className="max-w-[1400px] m-auto ">
         <div className="flex items-center gap-[63px] pb-[164px]">
-          <h2 className="text-[64px]">
+          <h2 className="text-4xl md:text-5xl ">
             Our <span className="text-[#5cc0e0]">Values</span>{' '}
           </h2>
           <div className="flex-1 bg-gradient-to-r from-[#6adbfe] to-white h-[3px]"></div>

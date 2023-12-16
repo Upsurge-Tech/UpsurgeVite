@@ -48,8 +48,8 @@ export default function DevelopmentCard({ development, gridArea }) {
     `}
       >
         <img src={image} className='w-[80px] h-[80px]' />
-        <h3 className='text-[1.5rem] leading-[40px] text-white'>{title}</h3>
-        <p className='font-[600] text-[#948989]'>{content}</p>
+        <h3 className='text-2xl leading-[40px] text-white'>{title}</h3>
+        <p className='font-[400] text-[#b3a6a6]'>{content}</p>
       </div>
     </motion.div>
   )

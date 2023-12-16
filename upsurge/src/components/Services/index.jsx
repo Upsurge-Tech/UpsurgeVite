@@ -53,8 +53,8 @@ establish a strong online presence.`,
 
      `}>
       <div className="text-center pb-[100px]">
-        <h2 className="text-[40px] text-white">WHAT CAN WE DO FOR YOU</h2>
-        <p className="text-[32px] text-[#948989]">
+        <h2 className="text-4xl md:text-5xl pb-2 text-white">WHAT CAN WE DO FOR YOU</h2>
+        <p className="text-xl text-[#948989]">
           We develop softwares that helps millions of professionals
         </p>
       </div>

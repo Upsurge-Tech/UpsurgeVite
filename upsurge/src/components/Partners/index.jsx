@@ -35,7 +35,7 @@ export default function Partners() {
   return (
     <section className='bg-black py-[100px]'>
       <div className='flex items-center gap-[63px] pb-[120px] max-w-[1480px] m-auto px-[1rem]'>
-        <h2 className='text-[64px] text-white'>
+        <h2 className='text-4xl md:text-5xl  text-white'>
           Our <span className='text-[#5cc0e0]'>Partners</span>
         </h2>
         <div className='flex-1 bg-gradient-to-r from-[#6adbfe] to-white h-[3px]'></div>
