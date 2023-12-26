@@ -54,7 +54,7 @@ const Contact = () => {
         <h2 className="text-4xl md:text-5xl">
           Contact <span className="text-[#34B4DC]"> Us</span>
         </h2>
-        <div className="flex-0 bg-gradient-to-r from-[#6adbfe] to-white h-2 md:h-[3px] md:flex-1"></div>
+        <div className="flex-0 bg-gradient-to-r from-[#6adbfe] to-white h-2 md:h-[3px] md:flex-1 mr-10"></div>
       </div>
       <div className="flex flex-col-reverse md:flex-row items-center gap-5 md:gap-20 pb-5 md:pb-10 pl-5 md:pl-20">
         <div className="w-full lg:w-[40%] bg-gradient-to-r from-[#333333] to-[#171717] p-8">
