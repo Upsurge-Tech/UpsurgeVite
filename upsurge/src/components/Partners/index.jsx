@@ -1,3 +1,4 @@
+
 import partner1Img from "../../assets/testimonials-and-partners/partner-1.svg";
 import partner2Img from "../../assets/testimonials-and-partners/partner-2.svg";
 import partner3Img from "../../assets/testimonials-and-partners/partner-3.svg";
@@ -52,10 +53,12 @@ export default function Partners() {
             <img
               src={image}
               alt={name}
+
               className="mx-[50px] w-[180px] lg:w-[320px]"
               /* maxWidth:100% (default in tailwind) breaks translateX(-50%)
                 by making it translate much less. I don't understand why! */
               style={{ maxWidth: "none" }}
+
               key={i}
             />
           ))}

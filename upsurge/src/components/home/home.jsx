@@ -50,6 +50,7 @@ const Home = () => {
   }, []);
 
   const links = [
+
     { name: "Home", to: "#home" },
     { name: "Services", to: "#services" },
     { name: "Career", to: "#career" },

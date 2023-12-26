@@ -1,3 +1,5 @@
+
+import Footer from './components/footer/index.jsx'
 import Home from "./components/home/home.jsx";
 import Services from "./components/Services";
 import OurValues from "./components/OurValues";
@@ -15,13 +17,16 @@ function App() {
       <Services />
       <OurValues />
       <Whyus />
+      <Testimonials />
+      <Partners />
       <Career />
       <Testimonials />
       <Partners />
       <Question />
       <Contact />
+      <Footer />
     </main>
-  );
+  )
 }
 
-export default App;
+export default App
