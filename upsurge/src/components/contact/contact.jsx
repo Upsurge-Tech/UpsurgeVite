@@ -49,7 +49,10 @@ const Contact = () => {
     });
   }, []);
   return (
-    <main className="flex flex-col min-w-full h-full bg-black text-white">
+    <main
+      id="contact"
+      className="flex flex-col min-w-full h-full bg-black text-white"
+    >
       <div className="flex flex-row items-center gap-10 md:gap-10 pb-5 md:pb-5 pl-5 md:pl-20">
         <h2 className="text-4xl md:text-5xl">
           Contact <span className="text-[#34B4DC]"> Us</span>
