@@ -44,11 +44,11 @@ const Career = () => {
   return (
     <main id="career" className="bg-black min-w-screen min-h-screen">
       <div className="text-white flex flex-col md:flex-row w-full md:w-full gap-20">
-        <div ref={video_load} className="flex w-full md:w-[40%] md:pl-20 ">
+        <div ref={video_load} className=" w-full md:w-[40%] md:pl-20   ">
           <img
             src={globe}
             alt="Your Image"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover hidden md:visible"
           />
         </div>
         <div
