@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import globe from "../../assets/globe.mp4";
+import globe from "../../assets/career_globe.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,23 +42,27 @@ const Career = () => {
     });
   }, []);
   return (
-    <main id="career" className="bg-[#050D1F] min-w-screen min-h-screen">
-      <div className="text-white flex flex-col md:flex-row w-full md:w-full">
-        <div ref={video_load} className="flex w-full md:w-[50%]">
-          <video className="w-full h-full object-cover" autoPlay loop muted>
-            <source src={globe} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+    <main id="career" className="bg-black min-w-screen min-h-screen">
+      <div className="text-white flex flex-col md:flex-row w-full md:w-full gap-20">
+        <div
+          ref={video_load}
+          className="hidden md:block w-full md:w-[40%] md:pl-20"
+        >
+          <img
+            src={globe}
+            alt="Your Image"
+            className="w-full h-full object-cover"
+          />
         </div>
         <div
           ref={career_section}
-          className="pt-5 md:pt-40 p-10 md:p-0 flex flex-col gap-20 w-full md:w-[50%]"
+          className="pt-5 md:pt-20  p-10 md:p-0 flex flex-col gap-20 w-full md:w-[50%]"
         >
           <div className="text-4xl md:text-6xl">
             Looking for <span className="text-[#34B4DC]">internships?</span>
           </div>
           <div className="">
-            <div className="pl-4 md:pl-14 pr-4 md:pr-24 pb-4 md:pb-14">
+            <div className="pl-4 md:pl-14 pr-4 md:pr-10 pb-4 md:pb-14">
               At Upsurge, we believe in a holistic approach to technology
               solutions. We seamlessly blend the end-to-end convenience of
               integrated services with the best of breed excellence of
