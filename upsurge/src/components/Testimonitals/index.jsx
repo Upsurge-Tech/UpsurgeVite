@@ -59,8 +59,8 @@ export default function Testimonials() {
   return (
     <section className='bg-black py-[100px] ' id='testimonials'>
       <div className='max-w-[1480px] m-auto '>
-        <div className='flex items-center gap-[63px] pb-[120px] px-[1rem]'>
-          <h2 className='text-[64px] text-white'>Testimonials</h2>
+        <div className='flex items-center gap-[63px] pb-[100px] px-[1rem]'>
+          <h2 className='text-4xl md:text-5xl  text-white'>Testimonials</h2>
           <div className='flex-1 bg-gradient-to-r from-[#6adbfe] to-white h-[3px]'></div>
         </div>
         <TestimonialSlider testimonials={testimonials} />

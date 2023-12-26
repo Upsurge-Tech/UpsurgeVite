@@ -181,6 +181,10 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      <div className={`
+        absolute bottom-0 left-0 right-0 h-[30vh]
+        bg-gradient-to-b from-[transparent] to-[black]`}></div>
     </section>
   );
 };
