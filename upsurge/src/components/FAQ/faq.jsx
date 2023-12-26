@@ -36,7 +36,7 @@ const Question = () => {
       {
         opacity: 1,
         y: 0,
-        duration: 2,
+        duration: 1,
         ease: "power2.inOut",
       }
     );
@@ -126,12 +126,10 @@ const Question = () => {
               {active === index ? (
                 <div className="flex text-3xl w-14 h-8 md:w-24 md:h-14 bg-[#4FA9E2] items-center justify-center rounded-lg">
                   -
-                  {/* <img src={minus} alt="minus-sign" height={30} width={30} /> */}
                 </div>
               ) : (
                 <div className="flex text-3xl w-14 h-8 md:w-24 md:h-14 bg-[#152329] items-center justify-center rounded-lg">
                   +
-                  {/* <img src={plus} alt="plus-sign" height={30} width={30} /> */}
                 </div>
               )}
             </div>
