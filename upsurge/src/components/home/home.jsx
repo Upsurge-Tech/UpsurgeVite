@@ -1,37 +1,37 @@
-import { useEffect, useRef, useState } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import upsurge_logo from '../../assets/AlliedgeLogo_PNG 2.svg'
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import upsurge_logo from "../../assets/AlliedgeLogo_PNG 2.svg";
 // import globe from "../../assets/globe.mp4";
-import './home.css'
-gsap.registerPlugin(ScrollTrigger)
+import "./home.css";
+gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
-  const hero_txt = useRef(null)
-  const logo = useRef(null)
-  const nav_item = useRef(null)
+  const hero_txt = useRef(null);
+  // const logo = useRef(null);
+  const nav_item = useRef(null);
 
   useEffect(() => {
-    const T1 = gsap.timeline()
-    T1.fromTo(
-      logo.current,
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: 'power2.inOut',
-      }
-    )
+    const T1 = gsap.timeline();
+    // T1.fromTo(
+    //   logo.current,
+    //   { opacity: 0, x: -100 },
+    //   {
+    //     opacity: 1,
+    //     x: 0,
+    //     duration: 1,
+    //     ease: "power2.inOut",
+    //   }
+    // );
     T1.fromTo(
       nav_item.current,
-      { opacity: 0, x: 100 },
+      { opacity: 0, y: 100 },
       {
         opacity: 1,
-        x: 0,
+        y: 0,
         duration: 1,
-        ease: 'power2.inOut',
+        ease: "power2.inOut",
       }
-    )
+    );
     T1.fromTo(
       hero_txt.current,
       { opacity: 0, y: -100 },
@@ -39,46 +39,51 @@ const Home = () => {
         opacity: 1,
         y: 0,
         duration: 2,
-        ease: 'power2.inOut',
+        ease: "power2.inOut",
       }
-    )
+    );
     ScrollTrigger.create({
       trigger: hero_txt.current,
-      start: 'top 80%',
+      start: "top 80%",
       animation: T1,
-    })
-  }, [])
+    });
+  }, []);
 
   const links = [
-    { name: 'Home', to: '#home' },
-    { name: 'Services', to: '#services' },
-    { name: 'Career', to: '#' },
-    { name: 'Testimonials', to: '#testimonials' },
-    { name: 'Team', to: '#' },
-    { name: 'Contact Us', to: '#' },
-  ]
-  const [isOpen, setIsOpen] = useState(false)
-  const [active, setActive] = useState('')
+
+    { name: "Home", to: "#home" },
+    { name: "Services", to: "#services" },
+    { name: "Career", to: "#career" },
+    { name: "Testimonials", to: "#testimonials" },
+    { name: "Team", to: "#" },
+    { name: "Contact Us", to: "#contact" },
+  ];
+  const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState("");
+
   const toggleNavbar = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
   const handleActive = (name) => {
-    setActive(name)
-    console.log(name)
-  }
+    setActive(name);
+    console.log(name);
+  };
 
   return (
     <section
       id="home"
-      className="min-w-screen min-h-screen relative overflow-hidden bg-[#050D1F]"
+      className="min-w-screen min-h-screen relative overflow-hidden bg-black"
     >
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 z-0 overflow-hidden text-white">
         <div className="w-full h-full bg-[url('assets/heroMain.svg')] bg-cover bg-center animate-spin-slow"></div>
       </div>
       <div className="absolute text-white font-inter">
-        <nav className="w-full z-20 top-0 left-0 pt-5 text-secondary-text ">
+        <nav
+          ref={nav_item}
+          className="w-full z-20 top-0 left-0 pt-5 text-secondary-text "
+        >
           <div className="max-w-screen-xl flex flex-wrap md:items-center md:justify-between justify-around mx-auto p-5 ml-4 md:ml-28 mr-8 md:mr-16">
-            <a ref={logo} href="#home" className="flex items-center">
+            <a href="#home" className="flex items-center">
               <img
                 src={upsurge_logo}
                 width={51}
@@ -114,14 +119,11 @@ const Home = () => {
 
             <div
               className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
-                isOpen ? 'block' : 'hidden'
+                isOpen ? "block" : "hidden"
               }`}
               id="navbar-sticky"
             >
-              <ul
-                ref={nav_item}
-                className="flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 lg:space-x-16 md:mt-0 md:border-0 h-full"
-              >
+              <ul className="flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 lg:space-x-16 md:mt-0 md:border-0 h-full">
                 {links.map((link, index) => (
                   <li key={index}>
                     <a
@@ -129,8 +131,8 @@ const Home = () => {
                       href={`${link.to}`}
                       className={`${
                         active === link.name
-                          ? 'text-[#0c9793] font-semibold'
-                          : 'py-2'
+                          ? "text-[#0c9793] font-semibold"
+                          : "py-2"
                       } relative block text-md pl-3 pr-4 transition duration-75 md:hover:bg-transparent md:hover:text-[#0c9793] md:p-0`}
                       aria-current="page"
                     >
@@ -159,7 +161,7 @@ const Home = () => {
           ref={hero_txt}
           className="flex flex-col pt-28 items-center justify-center h-96 pl-6 pr-6 md:pl-48 md:pr-48 space-y-10 "
         >
-          <div className="text-[#C6C6C6] font-inter text-4xl md:text-8xl text-center ">
+          <div className="text-white font-inter text-4xl md:text-8xl text-center ">
             Reach The
             <br /> Uncharted Horizon
           </div>
@@ -180,9 +182,15 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      <div
+        className={`
+        absolute bottom-0 left-0 right-0 h-[30vh]
+        bg-gradient-to-b from-[transparent] to-[black]`}
+      ></div>
     </section>
-  )
-}
+  );
+};
 
 // <div className="absolute inset-0 z-0 overflow-hidden">
 //         <video className="w-full h-full object-fit  " autoPlay loop muted>
@@ -191,4 +199,4 @@ const Home = () => {
 //         </video>
 //       </div>
 
-export default Home
+export default Home;
