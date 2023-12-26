@@ -86,7 +86,10 @@ export default function Bridge({ isLeft, gridArea }) {
   return (
     <div
       ref={ref}
-      className={`relative min-h-[300px] overflow-hidden hidden sm:block`}
+      className={`
+        relative  overflow-hidden hidden
+        sm:block min-h-[150px]
+      `}
       style={{ gridArea }}
     >
       {isLeft ? bottomLeft : bottomRight}
