@@ -51,11 +51,13 @@ const Contact = () => {
   return (
     <main className="flex flex-col min-w-full h-full bg-black text-white">
       <div className="flex flex-row items-center gap-10 md:gap-10 pb-5 md:pb-5 pl-5 md:pl-20">
-        <h2 className="text-4xl md:text-5xl">Contact Us</h2>
+        <h2 className="text-4xl md:text-5xl">
+          Contact <span className="text-[#34B4DC]"> Us</span>
+        </h2>
         <div className="flex-0 bg-gradient-to-r from-[#6adbfe] to-white h-2 md:h-[3px] md:flex-1"></div>
       </div>
-      <div className="flex flex-col md:flex-row items-center gap-5 md:gap-20 pb-5 md:pb-10 pl-5 md:pl-20">
-        <div className="w-full md:w-[40%] bg-gradient-to-r from-[#333333] to-[#171717] p-8">
+      <div className="flex flex-col-reverse md:flex-row items-center gap-5 md:gap-20 pb-5 md:pb-10 pl-5 md:pl-20">
+        <div className="w-full lg:w-[40%] bg-gradient-to-r from-[#333333] to-[#171717] p-8">
           <form>
             <h2 className="text-2xl md:text-3xl text-center font-semibold">
               Reach Out
@@ -109,7 +111,7 @@ const Contact = () => {
             </div>
           </form>
         </div>
-        <div className="w-full md:w-[60%] mt-5 md:mt-0">
+        <div className="hidden md:block w-full md:w-[60%] mt-5 md:mt-0">
           <img
             src={contact_net}
             alt="Your Image"
