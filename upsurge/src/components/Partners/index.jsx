@@ -1,4 +1,3 @@
-
 import partner1Img from "../../assets/testimonials-and-partners/partner-1.svg";
 import partner2Img from "../../assets/testimonials-and-partners/partner-2.svg";
 import partner3Img from "../../assets/testimonials-and-partners/partner-3.svg";
@@ -34,31 +33,29 @@ export default function Partners() {
   const repeatedPartners = [...partners, ...partners, ...partners, ...partners];
 
   return (
-    <section className="bg-black py-[100px]">
-      <div className="flex items-center gap-[63px] pb-[100px] max-w-[1480px] m-auto px-[1rem]">
-        <h2 className="text-4xl md:text-5xl  text-white">
-          Our <span className="text-[#5cc0e0]">Partners</span>
-        </h2>
-        <div className="flex-1 bg-gradient-to-r from-[#6adbfe] to-white h-[3px]"></div>
+    <section className="bg-black px-[1rem] py-[100px]">
+      <div className="max-w-[1000px] m-auto ">
+        <div className="flex flex-col md:flex-row items-center gap-[60px] pb-[100px]">
+          <h2 className="text-4xl md:text-5xl text-white ">Partners</h2>
+          <div className=" w-0 sm:w-[45em]  bg-gradient-to-r from-[#6adbfe] to-white h-[2px]  "></div>
+        </div>
       </div>
 
       {/* flex to make it actually translateX by -50%. Translates much less othewise, I don't understand why.  */}
-      <div className="overflow-hidden flex">
+      <div className="overflow-hidden flex mx-0 sm:mx-[3em] pb-[100px]">
         <motion.div
           className="flex opacity-60"
-          animate={{ x: ["0%", "-50%"] }}
+          animate={{ x: ["0%", "-40%"] }}
           transition={{ duration: 20, ease: "linear", repeat: Infinity }}
         >
           {repeatedPartners.map(({ name, image }, i) => (
             <img
               src={image}
               alt={name}
-
-              className="mx-[50px] w-[180px] lg:w-[320px]"
+              className="mx-[50px] w-[180px] lg:w-[250px]"
               /* maxWidth:100% (default in tailwind) breaks translateX(-50%)
                 by making it translate much less. I don't understand why! */
               style={{ maxWidth: "none" }}
-
               key={i}
             />
           ))}

@@ -42,8 +42,8 @@ export default function Testimonials() {
       content: `Designers need to have a strong understanding of the principles of design in order to create effective solutions. They must also be aware of the latest trends and technologies so that they can stay ahead of the curve.`,
       name: "Jane Doe",
       description: "CEO of Inkyy.com",
-      profileImage: "",
-      rating: 5,
+      profileImage: profileImage,
+      rating: 2,
     },
 
     {
@@ -51,18 +51,18 @@ export default function Testimonials() {
       content: `Designers need to have a strong understanding of the principles of design in order to create effective solutions. They must also be aware of the latest trends and technologies so that they can stay ahead of the curve.`,
       name: "Jane Doe",
       description: "CEO of Inkyy.com",
-      profileImage: "",
+      profileImage: profileImage,
       rating: 5,
     },
   ];
 
   return (
     <section
-      className="bg-black px-[2rem] py-[100px] overflow-hidden"
+      className="bg-black px-0 sm:px-[2rem] py-[100px] overflow-hidden"
       id="testimonials"
     >
       <div className="max-w-[1480px] m-auto ">
-        <div className="flex flex-col md:flex-row items-center gap-[63px] pb-[10px] px-[10rem]">
+        <div className="flex flex-col md:flex-row items-center gap-[63px] pb-[100px] px-[10rem] ">
           <h2 className="text-4xl md:text-5xl text-white ">Testimonials</h2>
           <div className=" w-0 sm:w-[40em]  bg-gradient-to-r from-[#6adbfe] to-white h-[2px]  "></div>
         </div>

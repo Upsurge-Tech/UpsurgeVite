@@ -4,11 +4,11 @@ export default function TestimonialCard({ testimonial }) {
   return (
     <div
       className={`
-            w-[300px] md:w-[400px] shrink-0 mx-[15px] p-[40px]
-          bg-[#18181C] text-white rounded-[20px] text-[18px] font-Poppins
+            w-[300px] md:w-[400px] shrink-0 mx-[15px] p-[10px] md:p-[40px]
+          bg-[#18181C] text-white rounded-[20px] text-[15px] sm:text-[18px] font-Poppins
             flex flex-col gap-[32px]`}
     >
-      <p className="md:leading-[38px] flex-1">{testimonial.content}</p>
+      <p className="md:leading-[38px] flex-1 px-5">{testimonial.content}</p>
       <hr className="border-[#404047]" />
       <div className="flex flex-col gap-3 md:gap-0 md:flex-row justify-between items-center">
         <div className="flex gap-[20px]">
