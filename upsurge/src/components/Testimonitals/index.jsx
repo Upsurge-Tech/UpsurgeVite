@@ -57,11 +57,14 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="bg-black py-[100px] " id="testimonials">
+    <section
+      className="bg-black px-[2rem] py-[100px] overflow-hidden"
+      id="testimonials"
+    >
       <div className="max-w-[1480px] m-auto ">
-        <div className="flex md:flex-col items-center gap-[63px] pb-[10px]">
+        <div className="flex flex-col md:flex-row items-center gap-[63px] pb-[10px] px-[10rem]">
           <h2 className="text-4xl md:text-5xl text-white ">Testimonials</h2>
-          <div className="hidden md:block lg:h-[450px] lg:w-0 lg:border-r-2 border-b-2 w-[45em] bg-gradient-to-r from-[#6adbfe] to-white "></div>
+          <div className=" w-0 sm:w-[40em]  bg-gradient-to-r from-[#6adbfe] to-white h-[2px]  "></div>
         </div>
         <TestimonialSlider testimonials={testimonials} />
       </div>
