@@ -47,7 +47,10 @@ const Whyus = () => {
           <h2 className="text-4xl md:text-5xl ">
             Why <span className="text-[#5cc0e0]">US?</span>{" "}
           </h2>
-          <div className=" h-0 lg:h-[30em] sm:w-[40em] sm:h-[2px]  bg-gradient-to-r from-[#6adbfe] to-white lg:w-[2px]  "></div>
+          <div
+            ref={line}
+            className=" h-0 lg:h-[30em] sm:w-[40em] sm:h-[2px]  bg-gradient-to-r from-[#6adbfe] to-white lg:w-[2px]  "
+          ></div>
         </div>
 
         <div

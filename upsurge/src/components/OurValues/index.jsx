@@ -1,6 +1,43 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 import ValueCard from "./ValueCard";
 
 export default function OurValues() {
+  const line = useRef(null);
+  const main = useRef(null);
+
+  useEffect(() => {
+    const T1 = gsap.timeline();
+
+    T1.fromTo(
+      line.current,
+      { opacity: 0, x: 100 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.inOut",
+      }
+    );
+    T1.fromTo(
+      main.current,
+      { opacity: 0, y: -100 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.inOut",
+      }
+    );
+
+    ScrollTrigger.create({
+      trigger: line.current,
+      start: "top 80%",
+      animation: T1,
+    });
+  }, []);
   const values = [
     {
       color: "#7f7dfd",
@@ -46,7 +83,10 @@ export default function OurValues() {
           <h2 className="text-4xl md:text-5xl ">
             Our <span className="text-[#5cc0e0]">Values</span>{" "}
           </h2>
-          <div className=" w-0 sm:w-[40em]  bg-gradient-to-r from-[#6adbfe] to-white h-[2px]  "></div>
+          <div
+            ref={line}
+            className=" w-0 sm:w-[40em]  bg-gradient-to-r from-[#6adbfe] to-white h-[2px]  "
+          ></div>
         </div>
 
         <div

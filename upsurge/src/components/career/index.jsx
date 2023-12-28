@@ -6,14 +6,14 @@ import globe from "../../assets/career_globe.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const Career = () => {
-  const video_load = useRef(null);
+  const image = useRef(null);
   const career_section = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline();
 
     tl.fromTo(
-      video_load.current,
+      image.current,
       { opacity: 0, y: -100 },
       {
         opacity: 1,
@@ -42,12 +42,12 @@ const Career = () => {
     });
   }, []);
   return (
-    <main id="career" className="bg-black min-w-screen min-h-screen">
-      <div className="text-white flex flex-col md:flex-row w-full md:w-full gap-20">
-        <div
-          ref={video_load}
-          className="hidden md:block w-full md:w-[40%] md:pl-20"
-        >
+    <main
+      id="career"
+      className="bg-black min-w-screen min-h-screen pt-5 md:pt-48"
+    >
+      <div className="text-white flex flex-col md:flex-row w-full md:w-full gap-5 md:gap-20">
+        <div ref={image} className="max-w-[40%] m-auto md:w-[40%] w-0 ">
           <img
             src={globe}
             alt="Your Image"

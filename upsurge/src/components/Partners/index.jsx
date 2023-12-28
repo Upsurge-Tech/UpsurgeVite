@@ -4,8 +4,34 @@ import partner3Img from "../../assets/testimonials-and-partners/partner-3.svg";
 import partner4Img from "../../assets/testimonials-and-partners/partner-4.svg";
 import partner5Img from "../../assets/testimonials-and-partners/partner-5.svg";
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Partners() {
+  const line = useRef(null);
+
+  useEffect(() => {
+    const T1 = gsap.timeline();
+
+    T1.fromTo(
+      line.current,
+      { opacity: 0, x: 100 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.inOut",
+      }
+    );
+
+    ScrollTrigger.create({
+      trigger: line.current,
+      start: "top 80%",
+      animation: T1,
+    });
+  }, []);
   const partners = [
     {
       name: "partner1",
@@ -33,11 +59,14 @@ export default function Partners() {
   const repeatedPartners = [...partners, ...partners, ...partners, ...partners];
 
   return (
-    <section className="bg-black px-[1rem] py-[100px]">
+    <section className="bg-black px-[1rem] pt-[100px]">
       <div className="max-w-[1000px] m-auto ">
         <div className="flex flex-col md:flex-row items-center gap-[60px] pb-[100px]">
           <h2 className="text-4xl md:text-5xl text-white ">Partners</h2>
-          <div className=" w-0 sm:w-[45em]  bg-gradient-to-r from-[#6adbfe] to-white h-[2px]  "></div>
+          <div
+            ref={line}
+            className=" w-0 sm:w-[45em]  bg-gradient-to-r from-[#6adbfe] to-white h-[2px]  "
+          ></div>
         </div>
       </div>
 

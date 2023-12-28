@@ -5,8 +5,8 @@ import OurValues from "./components/OurValues";
 import Whyus from "./components/whyus/index.jsx";
 import Testimonials from "./components/Testimonitals/index.jsx";
 import Partners from "./components/Partners/index.jsx";
-import Career from "./components/career/career.jsx";
-import Question from "./components/FAQ/faq.jsx";
+import Career from "./components/career/index.jsx";
+import Question from "./components/FAQ/index.jsx";
 import Contact from "./components/contact/contact.jsx";
 
 function App() {
@@ -16,8 +16,6 @@ function App() {
       <Services />
       <OurValues />
       <Whyus />
-      <Testimonials />
-      <Partners />
       <Career />
       <Testimonials />
       <Partners />

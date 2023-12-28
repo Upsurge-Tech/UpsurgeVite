@@ -85,10 +85,8 @@ const Question = () => {
   };
   return (
     <main className="flex flex-col min-w-full h-full bg-black p-5 md:p-10 text-white">
-      <div className="flex flex-row items-center gap-10 md:gap-10 pb-5 md:pb-10 p-20">
-        <h2 ref={faq} className="text-4xl md:text-5xl">
-          FAQ&#39;s
-        </h2>
+      <div className="flex flex-row items-center gap-10 md:gap-24 pb-5 md:pb-10 px-[10em]">
+        <h2 className="text-4xl md:text-5xl">FAQ&#39;s</h2>
         <div
           ref={line}
           className="flex-0 bg-gradient-to-r from-[#6adbfe] to-white h-2 md:h-[3px]  md:flex-1"
@@ -96,7 +94,7 @@ const Question = () => {
       </div>
       <div
         ref={main_faq}
-        className="border-2 border-dashed border-[#9747FF] mx-1 lg:mx-32 mb-5 md:mb-14 p-5 md:p-14 mt-20"
+        className="border-2 border-dashed border-[#7edcf9] mx-1 lg:mx-32 mb-5 md:mb-14 p-5 md:p-14 mt-20"
       >
         {question?.map((questions, index) => (
           <div key={index} className="flex flex-col text-white pb-3 md:pb-5">
