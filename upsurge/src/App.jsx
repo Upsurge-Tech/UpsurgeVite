@@ -1,6 +1,5 @@
-
-import Footer from './components/footer/index.jsx'
-import Home from "./components/home/home.jsx";
+import Footer from "./components/footer/index.jsx";
+import Home from "./components/home/index.jsx";
 import Services from "./components/Services";
 import OurValues from "./components/OurValues";
 import Whyus from "./components/whyus/whyus.jsx";
@@ -26,7 +25,7 @@ function App() {
       <Contact />
       <Footer />
     </main>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -50,7 +50,6 @@ const Home = () => {
   }, []);
 
   const links = [
-
     { name: "Home", to: "#home" },
     { name: "Services", to: "#services" },
     { name: "Career", to: "#career" },
@@ -70,9 +69,9 @@ const Home = () => {
   };
 
   return (
-    <section
+    <main
       id="home"
-      className="min-w-screen min-h-screen relative overflow-hidden bg-black"
+      className="min-w-screen h-[50em] relative overflow-hidden bg-black pb-[100px]"
     >
       <div className="absolute inset-0 z-0 overflow-hidden text-white">
         <div className="w-full h-full bg-[url('assets/heroMain.svg')] bg-cover bg-center animate-spin-slow"></div>
@@ -82,7 +81,7 @@ const Home = () => {
           ref={nav_item}
           className="w-full z-20 top-0 left-0 pt-5 text-secondary-text "
         >
-          <div className="max-w-screen-xl flex flex-wrap md:items-center md:justify-between justify-around mx-auto p-5 ml-4 md:ml-28 mr-8 md:mr-16">
+          <div className="max-w-screen-xl flex flex-wrap lg:items-center lg:justify-between justify-around mx-auto p-5 ml-4 lg:ml-28 mr-8 lg:mr-16">
             <a href="#home" className="flex items-center">
               <img
                 src={upsurge_logo}
@@ -92,11 +91,11 @@ const Home = () => {
               />
             </a>
 
-            <div className="flex md:hidden">
+            <div className="flex lg:hidden">
               <button
                 type="button"
                 onClick={toggleNavbar}
-                className="inline-flex items-center p-2 w-10 h-10 justify-center text-md border border-primary rounded-lg bg-black focus:outline-none focus:ring-1 focus:ring-[#0c9793]"
+                className="inline-flex items-center p-2 w-10 h-10 justify-center text-md border border-primary rounded-lg bg-black focus:outline-none focus:ring-1 bg-gradient-to-r from-[#0038FCB2] to-[#69DBFF68]"
               >
                 <span className="sr-only">Open main menu</span>
                 <svg
@@ -118,12 +117,12 @@ const Home = () => {
             </div>
 
             <div
-              className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
+              className={`items-center justify-between w-full lg:flex lg:w-auto lg:order-1 ${
                 isOpen ? "block" : "hidden"
               }`}
               id="navbar-sticky"
             >
-              <ul className="flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 lg:space-x-16 md:mt-0 md:border-0 h-full">
+              <ul className="flex flex-col p-4 lg:p-0 mt-4 rounded-lg lg:flex-row lg:space-x-16 lg:mt-0 lg:border-0 h-full">
                 {links.map((link, index) => (
                   <li key={index}>
                     <a
@@ -133,12 +132,12 @@ const Home = () => {
                         active === link.name
                           ? "text-[#0c9793] font-semibold"
                           : "py-2"
-                      } relative block text-md pl-3 pr-4 transition duration-75 md:hover:bg-transparent md:hover:text-[#0c9793] md:p-0`}
+                      } relative block text-md pl-3 pr-4 transition duration-75 lg:hover:bg-transparent lg:hover:text-[#0c9793] lg:p-0`}
                       aria-current="page"
                     >
                       {link.name}
                       {active === link.name && (
-                        <span className=" absolute md:top-10 lg:top-12 left-0 w-full h-0 md:h-1 font-bold transition duration-150"></span>
+                        <span className=" absolute md:top-10 lg:top-12 left-0 w-full h-0 lg:h-1 font-bold transition duration-150"></span>
                       )}
                     </a>
                   </li>
@@ -148,7 +147,7 @@ const Home = () => {
               <a href="#contact">
                 <button
                   type="button"
-                  className="focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-3 text-center border border-primary ml-4 md:ml-8 bg-gradient-to-r from-[#0c9793] to-[#296571] text-white"
+                  className="focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-3 text-center border border-primary ml-4 md:ml-8 bg-gradient-to-r from-[#0038FCB2] to-[#69DBFF68] text-white"
                 >
                   Blog
                 </button>
@@ -174,7 +173,7 @@ const Home = () => {
             <a href="#contact">
               <button
                 type="button"
-                className="focus:ring-4 focus:outline-none  focus:ring-blue-300 font-medium rounded-lg text-md px-8 py-3 text-center border border-primary ml-4 md:ml-8 bg-gradient-to-r from-[#1FC2E5B2] to-[#58D7FFAD] text-white"
+                className="focus:ring-4 focus:outline-none  focus:ring-blue-300 font-medium rounded-lg text-md px-8 py-3 text-center border border-primary ml-4 md:ml-8 bg-gradient-to-r from-[#0038FCB2] to-[#69DBFF68] text-white"
               >
                 Let&#39;s connect
               </button>
@@ -188,7 +187,7 @@ const Home = () => {
         absolute bottom-0 left-0 right-0 h-[30vh]
         bg-gradient-to-b from-[transparent] to-[black]`}
       ></div>
-    </section>
+    </main>
   );
 };
 
