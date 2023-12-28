@@ -43,25 +43,19 @@ const Whyus = () => {
   return (
     <main className="bg-black min-w-screen min-h-screen">
       <div className="text-white flex flex-col lg:flex-row items-center md:items-center justify-center gap-8 md:gap-20 p-16 md:p-32">
-        <div className="text-4xl md:text-5xl w-96 pl-10 sm:p-2 ">
-          Why <span className="text-[#00CDC1]">Us</span>?
+        <div className="flex md:flex-col items-center gap-[63px] pb-[10px]">
+          <h2 className="text-4xl md:text-5xl ">
+            Why <span className="text-[#5cc0e0]">US?</span>{" "}
+          </h2>
+          <div className="hidden md:block lg:h-[450px] lg:w-0 lg:border-r-2 border-b-2 w-[45em] bg-gradient-to-r from-[#6adbfe] to-white h-[3px]"></div>
         </div>
 
         <div
-          ref={line}
-          className="hidden md:block lg:h-[450px] lg:w-0 lg:border-r-2 border-b-2 w-[300px]"
-          style={{
-            borderImage: "linear-gradient(to bottom, #69DBFF, white)",
-            borderImageSlice: 1,
-          }}
-        ></div>
-
-        <div
           ref={flex_items}
-          className="flex flex-col md:flex-row gap-5 md:gap-10"
+          className="flex flex-col md:flex-row gap-24 sm:gap-5"
         >
-          <div className="flex flex-col ">
-            <div className="flex flex-col w-full lg:w-80 h-60  p-4 lg:p-10 transform transition-all duration-700 ease-in-out transform-origin-center hover:rotate-6 hover:scale-105">
+          <div className="flex flex-col gap-20 sm:gap-5  ">
+            <div className="flex flex-col w-full lg:w-80 h-48  p-4 lg:p-10 transform transition-all duration-700 ease-in-out transform-origin-center hover:rotate-6 hover:scale-105">
               <p className="text-3xl md:text-4xl text-[#69DBFF] pb-4 md:pb-10 font-semibold">
                 Expertise
               </p>
@@ -70,7 +64,7 @@ const Whyus = () => {
                 to deliver innovative IT solutions that meet your unique needs.
               </p>
             </div>
-            <div className="flex flex-col w-full lg:w-80 h-60 p-4 lg:p-10 transform transition-all duration-700 ease-in-out transform-origin-center hover:rotate-6 hover:scale-105">
+            <div className="flex flex-col w-full lg:w-80 h-48 p-4 lg:p-10 transform transition-all duration-700 ease-in-out transform-origin-center hover:rotate-6 hover:scale-105">
               <p className="text-3xl md:text-4xl text-[#69DBFF] pb-4 md:pb-10 font-semibold">
                 Solutions
               </p>
@@ -81,8 +75,8 @@ const Whyus = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-col ">
-            <div className="flex flex-col w-full lg:w-80 h-60 p-4 lg:p-10 transform transition-all duration-700 ease-in-out transform-origin-center hover:rotate-6 hover:scale-105">
+          <div className="flex flex-col gap-20 sm:gap-5 ">
+            <div className="flex flex-col w-full lg:w-80 h-48 p-4 lg:p-10 transform transition-all duration-700 ease-in-out transform-origin-center hover:rotate-6 hover:scale-105">
               <p className="text-3xl md:text-4xl text-[#69DBFF] pb-4 md:pb-10 font-semibold">
                 Tech
               </p>
@@ -92,7 +86,7 @@ const Whyus = () => {
                 available.
               </p>
             </div>
-            <div className="flex flex-col w-full lg:w-80 h-60 p-4 lg:p-10 transform transition-all duration-700 ease-in-out transform-origin-center hover:rotate-6 hover:scale-105">
+            <div className="flex flex-col w-full lg:w-80 h-48 p-4 lg:p-10 transform transition-all duration-700 ease-in-out transform-origin-center hover:rotate-6 hover:scale-105">
               <p className="text-3xl md:text-4xl text-[#69DBFF] pb-4 md:pb-10 font-semibold">
                 Results
               </p>
