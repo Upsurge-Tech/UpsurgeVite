@@ -42,11 +42,11 @@ export default function OurValues() {
   return (
     <section className="bg-[black] text-white px-[2rem] py-[100px] overflow-hidden">
       <div className="max-w-[1000px] m-auto ">
-        <div className="flex md:flex-col items-center gap-[63px] pb-[100px]">
+        <div className="flex flex-col md:flex-row items-center gap-[63px] pb-[100px]">
           <h2 className="text-4xl md:text-5xl ">
             Our <span className="text-[#5cc0e0]">Values</span>{" "}
           </h2>
-          <div className="hidden md:block lg:h-[450px] lg:w-0 lg:border-r-2 border-b-2 w-[45em] bg-gradient-to-r from-[#6adbfe] to-white h-[3px]"></div>
+          <div className=" w-0 sm:w-[40em]  bg-gradient-to-r from-[#6adbfe] to-white h-[2px]  "></div>
         </div>
 
         <div

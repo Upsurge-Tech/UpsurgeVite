@@ -43,7 +43,7 @@ const Whyus = () => {
   return (
     <main className="bg-black min-w-screen min-h-screen">
       <div className="text-white flex flex-col lg:flex-row items-center md:items-center justify-center gap-8 md:gap-20 p-16 md:p-32">
-        <div className="flex md:flex-col items-center gap-[63px] pb-[10px]">
+        <div className="flex flex-col md:flex-row items-center gap-[63px] pb-[10px]">
           <h2 className="text-4xl md:text-5xl ">
             Why <span className="text-[#5cc0e0]">US?</span>{" "}
           </h2>
